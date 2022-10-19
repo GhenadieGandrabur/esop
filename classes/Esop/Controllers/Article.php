@@ -7,120 +7,120 @@ use \Main\Authentication;
 
 class Article
 {
-  private $authorsTable;
-    private $articlesTable;
-    private $authentication;
+private $authorsTable;
+private $articlesTable;
+private $authentication;
 
-    public function __construct(DatabaseTable $articlesTable, DatabaseTable $authorsTable, Authentication $authentication)
-    {
-        $this->articlesTable = $articlesTable;
-        $this->authorsTable = $authorsTable;
-        $this->authentication = $authentication;
-    }
+public function __construct(DatabaseTable $articlesTable, DatabaseTable $authorsTable, Authentication $authentication)
+{
+$this->articlesTable = $articlesTable;
+$this->authorsTable = $authorsTable;
+$this->authentication = $authentication;
+}
 
-    public function list()
-    {
-        $result = $this->articlesTable->findAll();
+public function list()
+{
+$result = $this->articlesTable->findAll();
 
-        $articles = [];
-        foreach ($result as $article) {
-            $author = $this->authorsTable->findById($article['authorId']);
+$articles = [];
+foreach ($result as $article) {
+$author = $this->authorsTable->findById($article['authorId']);
 
-            $articles[] = [
-                'id' => $article['id'],
-                'date' => $article['date'],
-                'topic' => $article['topic'],
-                'articleText' => $article['articleText'],
-                'authorId'=>$article['authorId']
-                
-               
-            ];
-        }
+$articles[] = [
+'id' => $article['id'],
+'date' => $article['date'],
+'topic' => $article['topic'],
+'articleText' => $article['articleText'],
+'authorId'=>$article['authorId']
 
 
-        $title = 'Article list';
-        $pic = '/img/cambridge.jpg';
+];
+}
 
-        $totalArticles = $this->articlesTable->total();
-        $headerpic = "/img/headpic.jpg";
 
-        $author = $this->authentication->getUser();
+$title = 'Article list';
+$pic = '/img/cambridge.jpg';
 
-        return [
-                'template' => 'articles.html.php',
-                'title' => $title,
-                'pic' => $pic,
-              
-                'variables' => [
-                    'totalArticles' => $totalArticles,
-                    'articles' => $articles,
-                    'userId' => $author['id'] ?? null
-                ]
-            ];
-    }
+$totalArticles = $this->articlesTable->total();
+$headerpic = "/img/headpic.jpg";
 
-    public function home()
-    {
-        $title = 'ESOP';
-        $pic = '/img/harvard.jpg';
-    
-        return ['template' => 'home.html.php', 'title' => $title,'pic'=>$pic];
-    }
+$author = $this->authentication->getUser();
 
-    public function delete()
-    {
+return [
+'template' => 'articles.html.php',
+'title' => $title,
+'pic' => $pic,
 
-        $author = $this->authentication->getUser();
+'variables' => [
+'totalArticles' => $totalArticles,
+'articles' => $articles,
+'userId' => $author['id'] ?? null
+]
+];
+}
 
-        $article = $this->articlesTable->findById($_POST['id']);
+public function home()
+{
+$title = 'ESOP';
+$pic = '/img/harvard.jpg';
 
-        if ($article['authorId'] != $author['id']) {
-            return;
-        }
+return ['template' => 'home.html.php', 'title' => $title,'pic'=>$pic];
+}
 
-        $this->articlesTable->delete($_POST['id']);
+public function delete()
+{
 
-        header('location: /article/list');
-    }
-    public function saveEdit()
-    {
-        $author = $this->authentication->getUser();
+$author = $this->authentication->getUser();
 
-        if (isset($_GET['id'])) {
-            $article = $this->articlesTable->findById($_GET['id']);
+$article = $this->articlesTable->findById($_POST['id']);
 
-            if ($article['authorId'] != $author['id']) {
-                return;
-            }
-        }
+if ($article['authorId'] != $author['id']) {
+return;
+}
 
-        $article = $_POST['article'];
-        $article['date'] = new \DateTime();
-        $article['authorId'] = $author['id'];
+$this->articlesTable->delete($_POST['id']);
 
-        $this->articlesTable->save($article);
+header('location: /article/list');
+}
+public function saveEdit()
+{
+$author = $this->authentication->getUser();
 
-        header('location: /article/list');
-    }
+if (isset($_GET['id'])) {
+$article = $this->articlesTable->findById($_GET['id']);
 
-    public function edit()
-    {
-        $author = $this->authentication->getUser();
+if ($article['authorId'] != $author['id']) {
+return;
+}
+}
 
-        if (isset($_GET['id'])) {
-            $article = $this->articlesTable->findById($_GET['id']);
-        }
+$article = $_POST['article'];
+$article['date'] = new \DateTime();
+$article['authorId'] = $author['id'];
 
-        $title = 'Edit article';
+$this->articlesTable->save($article);
 
-        return [
-            'template' => 'editarticle.html.php',
-            'title' => $title,
-            'variables' => [
-                'article' => $article ?? null,
-                'userId' => $author['id'] ?? null
-            ]
-        ];
-    }   
-    
+header('location: /article/list');
+}
+
+public function edit()
+{
+$author = $this->authentication->getUser();
+
+if (isset($_GET['id'])) {
+$article = $this->articlesTable->findById($_GET['id']);
+}
+
+$title = 'Edit article';
+
+return [
+'template' => 'editarticle.html.php',
+'title' => $title,
+'variables' => [
+'article' => $article ?? null,
+'userId' => $author['id'] ?? null
+]
+];
+}   
+
 }

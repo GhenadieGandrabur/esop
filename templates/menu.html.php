@@ -1,5 +1,5 @@
 <div class="mymenu">
-
+   <a href="/">Home</a>
   <div class="downbutton">
     <button class="drdbutton">All about me
       <i class="fa fa-caret-down"></i>

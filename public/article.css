@@ -5,7 +5,7 @@
  }
 
  
- footer {
+ div.footer {
      padding: 1em;
      background-color: #111111;
      font-size: 1em;
@@ -14,18 +14,18 @@
      text-decoration: none;
  }
 
- footer ul li{
+ .footer ul li{
     list-style-type:none;
   
   
 
  }
- footer h5{
+ .footer h5{
     text-align: left;
     padding-left: 40px;
 
  }
- footer a{
+ .footer a{
     color: #f9f9f9;
  }
 

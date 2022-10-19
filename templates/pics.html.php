@@ -1,4 +1,9 @@
-<br>
+<div class="row">
+<div class="col-2 col-s-2">
+
+</div>
+
+<div class='col-8 col-s-8'>
 <?php if($userId>0):?>
 <h5><a class= "button button_edit" href="/adapic.php">Add a pic</a></h5>
 <?php endif;?>
@@ -6,7 +11,7 @@
 
 <div class="gallery">
   <a target="_blank" href="/img/<?=htmlspecialchars($pic['name'], ENT_QUOTES, 'UTF-8')?>">
-   <img src="/img/<?=htmlspecialchars($pic['name'], ENT_QUOTES, 'UTF-8')?>" alt="<?=$image?>" width="600" height="400">
+   <img src="/img/<?=htmlspecialchars($pic['name'], ENT_QUOTES, 'UTF-8')?>" alt="" width="600" height="400">
   </a>
   
   <div class="desc"><?=htmlspecialchars($pic['image'], ENT_QUOTES,'UTF-8'); ?></div>
@@ -24,6 +29,14 @@
 </div>
 
 <?php endforeach;?>
+
+</div>
+
+</div>
+<div class="row">
+<div class="col-2 col-s-2">
+
+</div>
 
 </div>
 
