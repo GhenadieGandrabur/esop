@@ -19,9 +19,9 @@
                 <h4>  
                 <?=$n=$n+1?>.<b> <?= htmlspecialchars($event['topic'], ENT_QUOTES, 'UTF-8') ?></b>
                 </h4> 
-                <h4> 
+                <p class="tj"> 
                 <?= htmlspecialchars($event['eventtext'], ENT_QUOTES, 'UTF-8') ?>
-                </h4>
+                </p>
 
                 <?php if ($userId>0) : ?>
                 <table>

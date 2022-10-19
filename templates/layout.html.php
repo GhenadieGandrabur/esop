@@ -36,7 +36,7 @@
     <div class="col-10 col-s-10 " style="  position: relative;">
       
       <?php if(isset($pic)):?> 
-        <img src="/img/headpic.jpg" >
+        <img src="<?=$pic?>" >
         <div style="position: absolute; bottom:20px; right: 20px;  font-size:28px;color:white; text-shadow: 2px 2px #000000;"  >
           English School Olga Pascari<br>
           Languages open doors                    

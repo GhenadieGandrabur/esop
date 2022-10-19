@@ -1,6 +1,7 @@
 <div class="row">
 <div class="col-2 col-s-2">
-
+<h3>He who dares to teach must never cease to learn.</h3>
+<small>John Cotton Dana</small>
 </div>
 
 <div class='col-8 col-s-8'>
@@ -17,9 +18,9 @@
   <div class="desc"><?=htmlspecialchars($pic['image'], ENT_QUOTES,'UTF-8'); ?></div>
   <?php if($userId>0):?>
     <div class="row">
-<div class="col"><a class="button button_edit" href="/pic/edit?id=<?= $pic['id'] ?>"> Edit </a></div>
+<div class="col-4"><a class="button button_edit" href="/pic/edit?id=<?= $pic['id'] ?>"> Edit </a></div>
 
-<div class="col">
+<div class="col-8">
   <form  action="/pic/delete" method="post">
         <input type="hidden" name="id" value="<?= $pic['id'] ?>">
         <input class="button button_delete" style="float:right"   type="submit" value="Delete"></div>
