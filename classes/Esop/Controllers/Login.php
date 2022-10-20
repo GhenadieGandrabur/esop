@@ -13,14 +13,13 @@ class Login
 
     public function loginForm()
     {
-        
-        return ['template' => 'login.html.php', 'title' => 'Log In', 'pic' => '/img/cambridge.jpg'];
+        return ['template' => 'login.html.php', 'title' => 'Log In'];
     }
 
     public function processLogin()
     {
         if ($this->authentication->login($_POST['email'], $_POST['password'])) {
-            header('location: /');
+            header('location: /login/success');
         } else {
             return [
                 'template' => 'login.html.php',

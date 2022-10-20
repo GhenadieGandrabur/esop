@@ -1,10 +1,10 @@
-<div class="mymenu">
+<div class="topnav" id="myTopnav">
    <a href="/">Home</a>
-  <div class="downbutton">
-    <button class="drdbutton">All about me
+  <div class="dropdown">
+    <button class="dropbtn">All about me
       <i class="fa fa-caret-down"></i>
     </button>
-    <div class="downbutton-content">
+    <div class="dropdown-content">
       <a href="/pics/list">Certificates</a>
       <a href="/certificates/aboutme">Resume</a>
       <a href="/article/list">Articles</a>
@@ -12,11 +12,11 @@
       <a href="#">Online Somatic Idiomatic Dictionary (OSID)</a>
     </div>
   </div> 
-  <div class="downbutton">
-    <button class="drdbutton">ULIM
+  <div class="dropdown">
+    <button class="dropbtn">ULIM
       <i class="fa fa-caret-down"></i>
     </button>
-    <div class="downbutton-content">
+    <div class="dropdown-content">
       <a href="#">Oral Consecutive Translation</a>
       <a href="#">Conference interpreting</a>
       <a href="#">Specialized Translation</a>
@@ -35,4 +35,5 @@
       <?php else : ?>
         <a style="float:right ;"  href="/login">Log in</a>
       <?php endif; ?>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 </div>

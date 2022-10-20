@@ -28,7 +28,8 @@ class Events
             $events[] = [
                 'id' => $event['id'],
                 'topic'=>$event['topic'],
-                'eventtext' => $event['eventtext']
+                'eventtext' => $event['eventtext'],
+                'eventimage' => $event['eventimage']
             ];
         }
 
