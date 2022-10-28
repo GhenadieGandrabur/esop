@@ -19,12 +19,12 @@
     <div class="dropdown-content">
       <a href="#">Oral Consecutive Translation</a>
       <a href="#">Conference interpreting</a>
-      <a href="#">Specialized Translation</a>
+      <a href="/sptrans/list">Specialized Translation</a>
       <a href="#">TAM</a>
       <a href="#">Buisnes Correspondence</a>
     </div>
   </div> 
-  <a href="/article/list">Grammar</a>
+  <a href="/word/list">Vocabulary</a>
   <a href="/article/list">International Exam Material</a>
   <a href="/events/list">Events</a>
   <a href="/article/list">Contacts</a>

@@ -9,12 +9,17 @@ class EsopRoutes implements \Main\Routes
 	private $authentication;
 	private $eventsTable;
 	private $picsTable;
+	private $wordTable;
+	private $sptransTable;
+	
 
 	public function __construct()
 	{
 		include __DIR__ . '/../../includes/DatabaseConnection.php';
 
 		$this->articlesTable = new \Main\DatabaseTable($pdo, 'article', 'id');
+		$this->sptransTable = new \Main\DatabaseTable($pdo, 'sptrans', 'id');
+		$this->wordTable = new \Main\DatabaseTable($pdo, 'vocabulary', 'id');
 		$this->picsTable = new \Main\DatabaseTable($pdo, 'images', 'id');
 		$this->eventsTable = new \Main\DatabaseTable($pdo, 'events', 'id');
 		$this->authorsTable = new \Main\DatabaseTable($pdo, 'author', 'id');
@@ -24,6 +29,8 @@ class EsopRoutes implements \Main\Routes
 	public function getRoutes(): array
 	{
 		$articleController = new \Esop\Controllers\Article($this->articlesTable, $this->authorsTable, $this->authentication);
+		$sptransController = new \Esop\Controllers\Sptrans($this->sptransTable, $this->authentication);
+		$wordController = new \Esop\Controllers\Vocabulary($this->wordTable, $this->authorsTable, $this->authentication);
 		$picController = new \Esop\Controllers\Pics($this->picsTable,$this->authentication);
 		$eventsController = new \Esop\Controllers\Events($this->eventsTable, $this->authentication);
 		$certificatesController = new \Esop\Controllers\Certificates($this->articlesTable, $this->authorsTable, $this->authentication);
@@ -94,8 +101,13 @@ class EsopRoutes implements \Main\Routes
 			'events/list' => ['GET'=> ['controller' => $eventsController, 'action' => 'list'],],
 			'events/delete' => ['POST'=> ['controller' => $eventsController, 'action' => 'delete'],'login' => true],
 			'events/edit' => ['POST'=> ['controller' => $eventsController, 'action' => 'saveEdit'],
-			                   'GET'=> ['controller' => $eventsController, 'action' => 'edit'], 'login' => true],
-
+			'GET'=> ['controller' => $eventsController, 'action' => 'edit'], 'login' => true],
+			'word/list' => ['GET'=> ['controller' => $wordController, 'action' => 'list'],],
+			'word/delete' => ['POST'=> ['controller' => $wordController, 'action' => 'delete'],'login' => true],
+			'word/edit' => ['POST'=> ['controller' => $wordController, 'action' => 'saveEdit'],
+			'GET'=> ['controller' => $wordController, 'action' => 'edit'], 'login' => true],
+			'sptrans/list' => ['GET'=> ['controller' => $sptransController, 'action' => 'home'],],
+			
 
 		];
 

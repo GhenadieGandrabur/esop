@@ -57,17 +57,13 @@ class Events
         header('location: /events/list');
     }
     public function saveEdit()
-    {
-       
+    {   
 
         if (isset($_GET['id'])) {
             $event = $this->eventTable->findById($_GET['id']);
 
         }
-
-        $event = $_POST['event'];
-        
-        
+        $event = $_POST['event'];       
 
         $this->eventTable->save($event);
 

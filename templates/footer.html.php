@@ -1,7 +1,7 @@
 <div class="footer bl">
 
-    <div class="row " style="border-bottom:1px #999999 solid;">
-        <div class="col-3 ">
+    <div class="row ">
+        <div class="col-3 col-s-3 ">
             <h5>Menu</h5>
             <ul>
               <li><a href="/pics/list">Certificates</a></li>
@@ -10,14 +10,14 @@
             </ul>  
         </div>
 
-        <div class="col-3 ">
+        <div class="col-3 col-s-3">
         <h5>Events</h5>
         </div>
 
-        <div class="col-3 ">
+        <div class="col-3 col-s-3">
         <h5>Other</h5>
         </div>
-        <div class="col-3 ">
+        <div class="col-3 col-s-3">
 
         <h5>Contacts</h5>
         <ul>

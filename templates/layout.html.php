@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/menu.css">
   <link rel="stylesheet" href="/ggstyles.css">
-  
+  <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
   <title><?= $title ?></title>
   </head>
   
@@ -65,7 +65,9 @@
           <?= $output?>
           
     
-       
+          <script>
+    CKEDITOR.replace( 'textarea' );
+  </script>
     
     <?php include 'footer.html.php'?>
     

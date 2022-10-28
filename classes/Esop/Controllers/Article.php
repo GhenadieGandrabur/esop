@@ -31,8 +31,7 @@ class Article
                 'date' => $article['date'],
                 'topic' => $article['topic'],
                 'articleText' => $article['articleText'],
-                'authorId'=>$article['authorId']
-                
+                'authorId'=>$article['authorId']         
                
             ];
         }
