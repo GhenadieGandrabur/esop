@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/menu.css">
   <link rel="stylesheet" href="/ggstyles.css">
+  <link rel="stylesheet" href="/modal.css">
   <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
   <title><?= $title ?></title>
   </head>
@@ -53,14 +54,8 @@
           
         </div>
         
-      </div>
-    
-    
-    
-    
-    <?php include "menu.html.php"?>
-
-      
+      </div>    
+    <?php include "menu.html.php"?>   
           
           <?= $output?>
           
@@ -71,7 +66,7 @@
     
     <?php include 'footer.html.php'?>
     
-    
+    <script src="/myjs.js"></script> 
   </body>
 
   </html>

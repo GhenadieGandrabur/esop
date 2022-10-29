@@ -7,8 +7,7 @@
 
 
   <div class="col-10 col-s-10" style="padding:30px ;">
-  <h4 style="color:red ; ">Vocabulary</h4>
-
+  <h4 style="color:red ;">Vocabulary. <p style="color:black;  display:inline; "><?= $totalwords?> words in vocabulary.</p></h4>
 <p><form action="" method ="get" >
   <label for = "category" >Сhoose a category:</label>
   <select id="category" name="category">
@@ -32,7 +31,7 @@
     <th>Delete</th>
      <?php endif;?>
     <?php foreach ($words as $word) : ?>
-      <?php if(isset($_GET['category'])?? $category = "economics"): ?>
+      <?php if(($_GET['category'])== $word['category']): ?>
         
         <tr>
             <td><b><?= htmlspecialchars($word['en'], ENT_QUOTES, 'UTF-8') ?></b></td>

@@ -50,6 +50,12 @@ class Pics
         return ['template' => 'adapic.html.php',
                 'title' => $title,];
     }
+
+    public function test(){
+        $title = 'Add a pic';
+        return ['template' => 'test.html.php',
+                'title' => $title,];
+    }
     
 
     public function delete()

@@ -107,6 +107,7 @@ class EsopRoutes implements \Main\Routes
 			'word/edit' => ['POST'=> ['controller' => $wordController, 'action' => 'saveEdit'],
 			'GET'=> ['controller' => $wordController, 'action' => 'edit'], 'login' => true],
 			'sptrans/list' => ['GET'=> ['controller' => $sptransController, 'action' => 'home'],],
+			'test' => ['GET'=> ['controller' => $picController, 'action' => 'test'],],
 			
 
 		];
