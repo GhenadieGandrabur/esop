@@ -1,6 +1,6 @@
 <div class="row">
         <div class="col-4 col-s-4">
-        left
+        
         </div>
 
 <div class="col-4 col-s-4" >
@@ -43,7 +43,7 @@ endif;
 
 
         <div class="col-4 col-s-4">
-                Right
+                
         </div>
 </div>
 

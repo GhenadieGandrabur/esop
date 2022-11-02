@@ -13,7 +13,8 @@ class Login
 
     public function loginForm()
     {
-        return ['template' => 'login.html.php', 'title' => 'Log In'];
+        $pic = '/img/login.jpg';
+        return ['template' => 'login.html.php', 'title' => 'Log In', 'pic'=>$pic];
     }
 
     public function processLogin()
@@ -32,8 +33,9 @@ class Login
     }
 
     public function success()
-    {
-        return ['template' => 'loginsuccess.html.php', 'title' => 'Login Successful'];
+    {   
+         $pic = '/img/wellcome.jpg';
+        return ['template' => 'loginsuccess.html.php', 'title' => 'Login Successful','pic'=>$pic];
     }
 
     public function error()
@@ -43,9 +45,11 @@ class Login
     public function logout()
     {
         session_destroy();
+        $pic = '/img/logout.jpg';
         return [
             'template' => 'logout.html.php',
-            'title' => 'You have been logged out'
+            'title' => 'You have been logged out',
+            'pic'=>$pic
         ];
     }
 }

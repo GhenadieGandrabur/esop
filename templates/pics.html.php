@@ -11,9 +11,13 @@
 <?php foreach ($pics as $pic) : ?>
 
 <div class="gallery">
-  <a target="_blank" href="/img/<?=htmlspecialchars($pic['name'], ENT_QUOTES, 'UTF-8')?>">
-   <img src="/img/<?=htmlspecialchars($pic['name'], ENT_QUOTES, 'UTF-8')?>" alt="" width="600" height="400">
-  </a>
+<img id="myImg" onclick="myFunc(this)"  src="/img/<?=$pic['name']?>" alt="<?=$pic['image']?>">
+    
+    <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+    </div>
   
   <div class="desc"><?=htmlspecialchars($pic['image'], ENT_QUOTES,'UTF-8'); ?></div>
   <?php if($userId>0):?>

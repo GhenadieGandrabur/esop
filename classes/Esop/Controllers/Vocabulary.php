@@ -38,9 +38,10 @@ class Vocabulary
 
 
         $title = 'Vocabulary';
-        $pic = '/img/cambridge.jpg';        
+        $pic = '/img/cambridge.jpg';
+
         $totalwords = $this->vocabularyTable->total();
-        $pic = "/img/headpic.jpg";
+        $headerpic = "/img/headpic.jpg";
 
         $author = $this->authentication->getUser();
 
@@ -48,7 +49,6 @@ class Vocabulary
                 'template' => 'words.html.php',
                 'title' => $title,
                 'pic' => $pic,
-                'totalWorsd'=>$totalwords,
               
                 'variables' => [
                     'totalwords' => $totalwords,
