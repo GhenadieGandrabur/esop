@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/menu.css">
   <link rel="stylesheet" href="/ggstyles.css">
   <link rel="stylesheet" href="/modal.css">
+  <link rel="stylesheet" href="/form.css">
   <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
   <title><?= $title ?></title>
   </head>

@@ -2,7 +2,7 @@
    <div class="col-2 col-s-2"></div>
    <div class="col-8 col-s-8">
        <h3>Edit event:</h3>                                    
-       <form action="" method="post" enctype="multipart/form-data">           
+       <form action="" method="post" enctype="multipart/form-data" class="eventform">           
            <input id="id" name="event[id]" value="<?=$event['id']?? null?>" type="hidden"> <br>       
            <label for = "topic" >Topic of the event:</label><br>
            <input size="100%"  type="text" id ="topic" name="event[topic]" value="<?= $event['topic'] ?? '' ?>"><br><hr><br>

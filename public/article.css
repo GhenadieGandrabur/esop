@@ -32,28 +32,6 @@
  .footer a{
     color: #f9f9f9;
  }
-
- input 
-  {     
-     padding:5px;
- }
-
- label {
-     clear: left;
-     padding: 0;
-     margin: 0;
-    font-weight: bold;
-     color: #000000;
- }
-
- form {
-     overflow: auto;
-     clear: both;
-     display: block;
- }
-
- 
-
  .errors {
      padding: 1em;
      border: 1px solid red;
@@ -72,7 +50,7 @@
  
  div.gallery {
      margin: 5px;
-     border: 1px solid #ccc;
+     /*border: 1px solid #ccc;*/
      float: left;
      width: 180px;
  }

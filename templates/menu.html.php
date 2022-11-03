@@ -27,7 +27,7 @@
   <a href="/word/list">Vocabulary</a>
   <a href="/article/list">International Exam Material</a>
   <a href="/events/list">Events</a>
-  <a href="/article/list">Contacts</a>
+  <a href="/contact/list">Contacts</a>
   
     <?php if ($loggedIn) : ?>
         <a style="float:right ;" href="/logout">Log out</a>

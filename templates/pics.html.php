@@ -14,7 +14,7 @@
 <img id="myImg" onclick="myFunc(this)"  src="/img/<?=$pic['name']?>" alt="<?=$pic['image']?>">
     
     <div id="myModal" class="modal">
-    <span class="close">&times;</span>
+    <span class="close">❎</span>
     <img class="modal-content" id="img01">
     <div id="caption"></div>
     </div>
