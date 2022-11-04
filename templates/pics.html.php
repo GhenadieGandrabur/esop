@@ -6,7 +6,7 @@
 
 <div class='col-8 col-s-8'>
 <?php if($userId>0):?>
-<h5><a class= "button button_edit" href="/adapic.php">Add a pic</a></h5>
+<h5><a class= "button button_edit" href="/pic/edit">Add a pic</a></h5>
 <?php endif;?>
 <?php foreach ($pics as $pic) : ?>
 

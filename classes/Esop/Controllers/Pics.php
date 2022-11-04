@@ -67,6 +67,7 @@ class Pics
         $this->picTable->save($pic);
 
         header('location: /pics/list');
+        
     }
 
     public function edit()

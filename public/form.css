@@ -1,44 +1,8 @@
-.formborder{
-    border-radius: 10px;
-    border: 2px #000 solid;
-    padding: 30px; 
+.formstyle th, td {
+    padding: 5px;
+  }
 
-}
-.formbackground{
-    border-radius: 10px;
-    background-color: rgb(170, 223, 223);
-    padding: 30px;
-}
-.myform input[type=text]  {
-    width: 100%;
-    padding: 6px 10px;
-    margin: 8px 0;
-    border-radius: 5px;
-    border: none;
-    font-size: 14px;
-    
-}
-.eventform input[type=text]  {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border-radius: 5px;
-    border: 2px #000 solid;
-    font-size: 14px;
-    
-}
-.myform input[type=submit]  {
-    width: 50%;
-    padding: 6px 10px;
-    margin-top:12px  ;    
-    border-radius: 5px; 
-    background-color: white;
-    color: #000;
-    font-size: 14px;
-    border: 2px #000 solid;
-    
-}
-
-.myform label  {color:#000; font-size: 20px;} 
-.eventform label  {color:#000; font-size: 20px;} 
-.myform input[type=submit]:hover{background-color:green; cursor: pointer; color:white }
+  .formstyle table, th, td {border: none;} 
+  .formstyle input{padding: 5px;}
+  .formstyle input[type=submit]{padding: 5px; border: 2px green solid; background-color: aliceblue; color: black;}
+  .formstyle input[type=submit]:hover{padding: 5px; border: 2px green solid; background-color: green; color: white; cursor: pointer; width: 100%; }
