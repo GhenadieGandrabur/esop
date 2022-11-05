@@ -7,66 +7,62 @@ use Main\Authentication;
 class Pics
 {
     
-    private $picTable;
+    private $certificate_imagesTable;
     private $authentication;
     
 
-    public function __construct(DatabaseTable $picTable, Authentication $authentication)
+    public function __construct(DatabaseTable $certificate_imagesTable, Authentication $authentication)
     {
-        $this->picTable = $picTable;      
+        $this->certificate_imagesTable = $certificate_imagesTable;      
         $this->authentication = $authentication;
     }
 
     public function list()
     {
-        $result = $this->picTable->findAll();
+        $result = $this->certificate_imagesTable->findAll();
 
-        $pics = [];
-        foreach ($result as $pic) {
-            $pics[] = [
-                'id' => $pic['id'],
-                'name'=>$pic['name'],
-                'image' => $pic['image']
+        $certificates = [];
+        foreach ($result as $certificate) {
+            $pictures[] = [
+                'id' =>$certificate['id'],
+                'certificate_src'=>$certificate['certificate_src'],
+                'certificate_title' =>$certificate['certificate_title']
             ];
         }
 
         $title = 'Certificates list';
         $pic = "/img/cambridge.jpg";
-        $totalpics = $this->picTable->total();
+        $totalcertificates = $this->certificate_imagesTable->total();
          $author = $this->authentication->getUser();
 
         return [
-                'template' => 'pics.html.php',
+                'template' => 'certificates.html.php',
                 'title' => $title,
                 'pic'=>$pic,
                 'variables'=>[
-                    'totalpics'=>$totalpics, 'pics'=>$pics, 'userId'=>$author['id']?? null
+                    'totalcertificates'=>$totalcertificates, 'certificates'=>$certificates, 'userId'=>$author['id']?? null
                 ]                
             ];
     }
      
-    public function adapic(){
-        $title = 'Add a pic';
-        return ['template' => 'adapic.html.php',
-                'title' => $title,];
-    }
+ 
     
 
     public function delete()
     {
-        $this->picTable->delete($_POST['id']);
+        $this->certificate_imagesTable->delete($_POST['id']);
 
-        header('location: /pics/list');
+        header('location: /certificates/list');
     }
     public function saveEdit()
     {
       
 
-        $pic = $_POST['pic'];        
+        $certificate = $_POST['certificate'];        
 
-        $this->picTable->save($pic);
+        $this->certificate_imagesTable->save($certificate);
 
-        header('location: /pics/list');
+        header('location: /certificates/list');
         
     }
 
@@ -75,16 +71,16 @@ class Pics
         
 
         if (isset($_GET['id'])) {
-            $pic = $this->picTable->findById($_GET['id']);
+            $picture = $this->certificate_imagesTable->findById($_GET['id']);
         }
 
-        $title = 'Edit pic';
+        $title = 'Edit certificates';
 
         return [
             'template' => 'picEdit.html.php',
             'title' => $title,            
             'variables' => [
-                'pic' => $pic ?? null,                
+                'certificate' => $certificate ?? null,                
             ]
         ];
     }

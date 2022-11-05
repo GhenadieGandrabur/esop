@@ -8,7 +8,7 @@ class EsopRoutes implements \Main\Routes
 	private $articlesTable;
 	private $authentication;
 	private $eventsTable;
-	private $picsTable;
+	private $certificatesTable;
 	private $wordTable;
 	private $sptransTable;
 	private $contactsTable;
@@ -34,7 +34,7 @@ class EsopRoutes implements \Main\Routes
 		$articleController = new \Esop\Controllers\Article($this->articlesTable, $this->authorsTable, $this->authentication);
 		$sptransController = new \Esop\Controllers\Sptrans($this->sptransTable, $this->authentication);
 		$wordController = new \Esop\Controllers\Vocabulary($this->wordTable, $this->authorsTable, $this->authentication);
-		$picController = new \Esop\Controllers\Pics($this->picsTable,$this->authentication);
+		$certificateController = new \Esop\Controllers\Pics($this->certificateTable,$this->authentication);
 		$eventsController = new \Esop\Controllers\Events($this->eventsTable, $this->authentication);
 		$certificatesController = new \Esop\Controllers\Certificates($this->articlesTable, $this->authorsTable, $this->authentication);
 		$authorController = new \Esop\Controllers\Register($this->authorsTable);

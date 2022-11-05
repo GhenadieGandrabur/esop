@@ -8,7 +8,7 @@ class EsopRoutes implements \Main\Routes
 	private $articlesTable;
 	private $authentication;
 	private $eventsTable;
-	private $picsTable;
+	private $certificateTable;
 	private $wordTable;
 	private $sptransTable;
 	private $contactsTable;
@@ -22,7 +22,7 @@ class EsopRoutes implements \Main\Routes
 		$this->articlesTable = new \Main\DatabaseTable($pdo, 'article', 'id');
 		$this->sptransTable = new \Main\DatabaseTable($pdo, 'sptrans', 'id');
 		$this->wordTable = new \Main\DatabaseTable($pdo, 'vocabulary', 'id');
-		$this->picsTable = new \Main\DatabaseTable($pdo, 'images', 'id');
+		$this->certificateTable = new \Main\DatabaseTable($pdo, 'certificate_images', 'id');
 		$this->eventsTable = new \Main\DatabaseTable($pdo, 'events', 'id');
 		$this->authorsTable = new \Main\DatabaseTable($pdo, 'author', 'id');
 		$this->authentication = new \Main\Authentication($this->authorsTable, 'email', 'password');
@@ -34,7 +34,7 @@ class EsopRoutes implements \Main\Routes
 		$articleController = new \Esop\Controllers\Article($this->articlesTable, $this->authorsTable, $this->authentication);
 		$sptransController = new \Esop\Controllers\Sptrans($this->sptransTable, $this->authentication);
 		$wordController = new \Esop\Controllers\Vocabulary($this->wordTable, $this->authorsTable, $this->authentication);
-		$picController = new \Esop\Controllers\Pics($this->picsTable,$this->authentication);
+		$certificateController = new \Esop\Controllers\Pics($this->certificateTable,$this->authentication);
 		$eventsController = new \Esop\Controllers\Events($this->eventsTable, $this->authentication);
 		$certificatesController = new \Esop\Controllers\Certificates($this->articlesTable, $this->authorsTable, $this->authentication);
 		$authorController = new \Esop\Controllers\Register($this->authorsTable);
@@ -94,11 +94,12 @@ class EsopRoutes implements \Main\Routes
 				]
 			],
 			'' => ['GET' => [ 'controller' => $articleController, 	'action' => 'home']],
-			'pics/list' => ['GET' => [ 'controller' => $picController, 	'action' => 'list']],
-			'pic/add' => ['GET' => [ 'controller' => $picController, 	'action' => 'adapic']],
-			'pic/delete' => ['POST' => [ 'controller' => $picController, 	'action' => 'delete'],'login' => true],
-			'pic/edit' => ['POST'=> ['controller' => $picController, 'action' => 'saveEdit'],
-			                   'GET'=> ['controller' => $picController, 'action' => 'edit'], 'login' => true],
+
+			'certificates/list' => ['GET' => [ 'controller' => $certificateController, 	'action' => 'list']],			
+			'certificate/delete' => ['POST' => [ 'controller' => $certificateController, 	'action' => 'delete'],'login' => true],
+			'certificate/edit' => ['POST'=> ['controller' => $certificateController, 'action' => 'saveEdit'],
+			                   'GET'=> ['controller' => $certificateController, 'action' => 'edit'], 'login' => true],
+
 			'logout' => ['GET' => ['controller' => $loginController,'action' => 'logout']],
             'certificates/aboutme' => ['GET' => [ 'controller' => $certificatesController, 	'action' => 'aboutme']],
 			'events/list' => ['GET'=> ['controller' => $eventsController, 'action' => 'list'],],
@@ -114,7 +115,7 @@ class EsopRoutes implements \Main\Routes
 			'contact/edit' => ['POST'=> ['controller' => $contactController, 'action' => 'saveEdit'],
 			'GET'=> ['controller' => $wordController, 'action' => 'edit'], 'login' => true],
 			'sptrans/list' => ['GET'=> ['controller' => $sptransController, 'action' => 'home'],],
-			'test' => ['GET'=> ['controller' => $picController, 'action' => 'test'],],
+			'test' => ['GET'=> ['controller' => $certificateController, 'action' => 'test'],],
 			
 
 		];

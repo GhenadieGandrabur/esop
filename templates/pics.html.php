@@ -8,10 +8,10 @@
 <?php if($userId>0):?>
 <h5><a class= "button button_edit" href="/pic/edit">Add a pic</a></h5>
 <?php endif;?>
-<?php foreach ($pics as $pic) : ?>
+<?php foreach ($pictures as $picture) : ?>
 
 <div class="gallery">
-<img id="myImg" onclick="myFunc(this)"  src="/img/<?=$pic['name']?>" alt="<?=$pic['image']?>">
+<img id="myImg" onclick="myFunc(this)"  src="/img/<?=$picture['name']?>" alt="<?=$picture['image']?>">
     
     <div id="myModal" class="modal">
     <span class="close">❎</span>
@@ -19,14 +19,14 @@
     <div id="caption"></div>
     </div>
   
-  <div class="desc"><?=htmlspecialchars($pic['image'], ENT_QUOTES,'UTF-8'); ?></div>
+  <div class="desc"><?=htmlspecialchars($picture['image'], ENT_QUOTES,'UTF-8'); ?></div>
   <?php if($userId>0):?>
     <div class="row">
-<div class="col-4"><a class="button button_edit" href="/pic/edit?id=<?= $pic['id'] ?>"> Edit </a></div>
+<div class="col-4"><a class="button button_edit" href="/pic/edit?id=<?= $picture['id'] ?>"> Edit </a></div>
 
 <div class="col-8">
   <form  action="/pic/delete" method="post">
-        <input type="hidden" name="id" value="<?= $pic['id'] ?>">
+        <input type="hidden" name="id" value="<?= $picture['id'] ?>">
         <input class="button button_delete" style="float:right"   type="submit" value="Delete"></div>
     </form>
   </div>
