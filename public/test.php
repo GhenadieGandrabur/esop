@@ -25,6 +25,8 @@ if(isset($_POST['but_upload'])){
 
 <h5>Add a pic</h5>
 <form method="post" action="" enctype='multipart/form-data'>
-  <input type='file' name='file' />
-  <input type='submit' value='Save name' name='but_upload'>
+  
+  
+  <input type="file" id="fileElem" multiple accept="image/*" style="display:none" onchange="handleFiles(this.files)">
+  <label style ="border:1px solid; padding:5px;" for="fileElem">Select some files</label>
 </form>

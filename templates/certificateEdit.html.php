@@ -49,14 +49,17 @@ move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name);
 <form method="post" action="" enctype='multipart/form-data'>
 <table class="formstyle">   
 <tr><th>Upload a pic</th>
-<td><input id ="pic" type="file" name="uploadfile"></td> </tr>
+<td>
+  <input type="file" id="pic" name="uploadfile" multiple accept="image/*"  style="display:none" onchange="handleFiles(this.files)">
+  <label class="button button_save" for="pic">Select some files</label>
+</td> </tr>
 <tr><th>ID</th>
 <td> <input id="id" name="certificate[id]" value="<?=$certificate['id'] ??''?>"></td> </tr>
 <tr><th> <label for="certificate_src">Image name</label></th>
 <td><input id="certificate_src"  name="certificate[certificate_src]" value="<?=$certificate['certificate_src']??''?>"></td> </tr>
 <tr><th> <label for="title">Image title</label>  </th>
 <td> <input  name="certificate[certificate_title]" value="<?=$certificate['certificate_title']??''?>"></td> </tr>
-<tr><th></th><td><input type="submit" value="Save" name='uploadfile'> </td> </tr>             
+<tr><th></th><td><input class="button button_save" type="submit" value="Save" name='uploadfile'> </td> </tr>             
 </table>
 
 <script>
