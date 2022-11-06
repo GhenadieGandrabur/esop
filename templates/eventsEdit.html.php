@@ -7,7 +7,7 @@
 <form action="" method="post" enctype="multipart/form-data" class="eventform">           
 <input id="id" name="event[id]" value="<?=$event['id']?? null?>" type="hidden"> <br>       
 <label for = "topic" >Topic of the event:</label><br>
-<input size="100%"  type="text" id ="topic" name="event[topic]" value="<?= $event['topic'] ?? '' ?>"><br><hr><br>
+<input   type="text" id ="topic" name="event[topic]" value="<?= $event['topic'] ?? '' ?>"><br><hr><br>
 <div class="row">
 <div class = "col-4 col-s-4 tc">            
 <img src="/img/<?= $event['eventimage'] ?? '' ?>" width="100" height="auto"><br>

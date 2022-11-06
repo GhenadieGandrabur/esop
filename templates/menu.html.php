@@ -5,7 +5,7 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="/pics/list">Certificates</a>
+      <a href="/certificates/list">Certificates</a>
       <a href="/certificates/aboutme">Resume</a>
       <a href="/article/list">Articles</a>
       <a href="#">Books</a>
@@ -27,7 +27,7 @@
   <a href="/word/list">Vocabulary</a>
   <a href="/article/list">International Exam Material</a>
   <a href="/events/list">Events</a>
-  <a href="/contact/list">Contacts</a>
+  <a href="/contacts">Contacts</a>
   
     <?php if ($loggedIn) : ?>
         <a style="float:right ;" href="/logout">Log out</a>

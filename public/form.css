@@ -1,9 +1,10 @@
-.formstyle th, td {
-    padding: 5px;
-  }
 
-  .formstyle table, th, td {border: none;} 
-  .formstyle th{text-align: right; padding-right: 15px;}
-  .formstyle input{padding: 5px;}
-  .formstyle input[type=submit]{padding: 5px; border: 2px green solid; background-color: aliceblue; color: black;}
-  .formstyle input[type=submit]:hover{padding: 5px; border: 2px green solid; background-color: green; color: white; cursor: pointer; width: 50%; }
+.formstyle table{width: 100%;}
+.form{background-color: #ccc;  border-radius: 10px;  padding: 10px;  border: 5px #999 solid;}
+.formstyle th{padding-right: 15px; border:none} 
+.formstyle input{padding: 5px;}
+/*.formstyle input[type=submit]{ padding: 5px; border: 2px green solid;border-radius: 5px; background-color: aliceblue;
+color: black; cursor: pointer; width: inherit; width: 100px;} 
+.formstyle input[type=submit]:hover{ border: 2px green solid; background-color: green; color: white; 
+cursor:pointer ;}*/
+.formstyle input[type=text],input[type=password] { padding: 5px 10px;  border-radius: 4px;}

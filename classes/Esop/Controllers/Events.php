@@ -79,16 +79,14 @@ class Events
         }
 
         $title = 'Edit event';
+        $pic = "/img/cambridge.jpg";
 
         return [
             'template' => 'eventsEdit.html.php',
             'title' => $title,            
             'variables' => [
-                'event' => $event ?? null,                
+                'event' => $event ?? null,  'pic'=>$pic ?? null,               
             ]
         ];
-    }
-
-   
-    
+    }    
 }

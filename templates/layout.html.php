@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/ggstyles.css">
   <link rel="stylesheet" href="/modal.css">
   <link rel="stylesheet" href="/form.css">
+  <link rel="stylesheet" href="/button.css">
   <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
   <title><?= $title ?></title>
   </head>
@@ -39,7 +40,7 @@
     <div class="col-10 col-s-10 " style="  position: relative;">
       
       <?php if(isset($pic)):?> 
-        <img class="img" src="<?=$pic?>" >
+        <img class="img" src="<?=$pic??''?>" >
         <div style="position: absolute; bottom:20px; right: 20px;  font-size:28px;color:white; text-shadow: 2px 2px #000000;"  >
           English School Olga Pascari<br>
           Languages open doors                    
@@ -61,7 +62,7 @@
           <?= $output?>
           
     
-          <script>
+  <script>
     CKEDITOR.replace( 'textarea' );
   </script>
     

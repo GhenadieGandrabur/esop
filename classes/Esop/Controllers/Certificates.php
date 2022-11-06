@@ -2,67 +2,50 @@
 
 namespace Esop\Controllers;
 use \Main\DatabaseTable;
-use \Main\Authentication;
-
+use Main\Authentication;
 
 class Certificates
 {
-  private $authorsTable;
-    private $articlesTable;
+    
+    private $certificate_imagesTable;
     private $authentication;
+    
 
-    public function __construct(DatabaseTable $articlesTable, DatabaseTable $authorsTable, Authentication $authentication)
+    public function __construct(DatabaseTable $certificate_imagesTable, Authentication $authentication)
     {
-        $this->articlesTable = $articlesTable;
-        $this->authorsTable = $authorsTable;
+        $this->certificate_imagesTable = $certificate_imagesTable;      
         $this->authentication = $authentication;
     }
 
     public function list()
     {
-        $result = $this->articlesTable->findAll();
+        $result = $this->certificate_imagesTable->findAll();
 
-        $articles = [];
-        foreach ($result as $article) {
-            $author = $this->authorsTable->findById($article['authorId']);
-
-            $articles[] = [
-                'id' => $article['id'],
-                'date' => $article['date'],
-                'topic' => $article['topic'],
-                'articleText' => $article['articleText'],
-                'authorId'=>$article['authorId']
-                
-               
+        $certificates = [];
+        foreach ($result as $certificate) {
+            $certificates[] = [
+                'id' =>$certificate['id'],
+                'certificate_src'=>$certificate['certificate_src'],
+                'certificate_title' =>$certificate['certificate_title']
             ];
         }
 
-
-        $title = 'Article list';
-
-        $totalArticles = $this->articlesTable->total();
-
-        $author = $this->authentication->getUser();
+        $title = 'Certificates list';
+        $pic = "/img/cambridge.jpg";
+        $totalcertificates = $this->certificate_imagesTable->total();
+         $author = $this->authentication->getUser();
 
         return [
-                'template' => 'articles.html.php',
+                'template' => 'certificates.html.php',
                 'title' => $title,
-                'variables' => [
-                    'totalArticles' => $totalArticles,
-                    'articles' => $articles,
-                    'userId' => $author['id'] ?? null
-                ]
+                'pic'=>$pic,
+                'variables'=>[
+                    'totalcertificates'=>$totalcertificates, 'certificates'=>$certificates, 'userId'=>$author['id']?? null
+                ]                
             ];
     }
 
-    public function pics()
-    {
-        $title = 'Certificates';
-        $pic = "/img/headpic.jpg";
 
-        return ['template' => 'ulimgallery.html.php', 'title' => $title,
-         'pic' => $pic];
-    }
     
     
     public function aboutme()
@@ -73,61 +56,39 @@ class Certificates
         return ['template' => 'aboutme.html.php', 'title' => $title,
          'pic' => $pic];
     }
+ 
+    
 
     public function delete()
     {
+        $this->certificate_imagesTable->delete($_POST['id']);
 
-        $author = $this->authentication->getUser();
-
-        $article = $this->articlesTable->findById($_POST['id']);
-
-        if ($article['authorId'] != $author['id']) {
-            return;
-        }
-
-        $this->articlesTable->delete($_POST['id']);
-
-        header('location: /article/list');
-    }
-    public function saveEdit()
-    {
-        $author = $this->authentication->getUser();
-
-        if (isset($_GET['id'])) {
-            $article = $this->articlesTable->findById($_GET['id']);
-
-            if ($article['authorId'] != $author['id']) {
-                return;
-            }
-        }
-
-        $article = $_POST['article'];
-        $article['date'] = new \DateTime();
-        $article['authorId'] = $author['id'];
-
-        $this->articlesTable->save($article);
-
-        header('location: /article/list');
+        header('location: /certificates/list');
     }
 
-    public function edit()
-    {
-        $author = $this->authentication->getUser();
+public function saveEdit()
+{
 
-        if (isset($_GET['id'])) {
-            $article = $this->articlesTable->findById($_GET['id']);
-        }
+$certificate = $_POST['certificate'];        
 
-        $title = 'Edit article';
+$this->certificate_imagesTable->save($certificate);
 
-        return [
-            'template' => 'editarticle.html.php',
-            'title' => $title,
-            'variables' => [
-                'article' => $article ?? null,
-                'userId' => $author['id'] ?? null
-            ]
-        ];
-    }   
-    
+header('location: /certificates/list');
+}
+
+public function edit()
+{
+if (isset($_GET['id']))
+{
+$certificate = $this->certificate_imagesTable->findById($_GET['id']);
+}
+
+$title = 'Edit certificates!';
+
+return [
+'template' => 'certificateEdit.html.php',
+'title' => $title,            
+'variables' => ['certificate' => $certificate ?? null,]
+];
+}
 }

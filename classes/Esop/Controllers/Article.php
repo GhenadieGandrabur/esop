@@ -66,6 +66,17 @@ class Article
         return ['template' => 'home.html.php', 'title' => $title,'pic'=>$pic];
     }
 
+    public function contacts()
+    {
+        $title = 'Contacts';
+        $pic = '/img/contact.jpg';
+    
+        return ['template' => 'contact.html.php', 'title' => $title,'pic'=>$pic];
+    }
+
+
+
+
     public function delete()
     {
 
