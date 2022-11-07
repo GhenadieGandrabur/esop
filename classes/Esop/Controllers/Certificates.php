@@ -56,6 +56,14 @@ class Certificates
         return ['template' => 'aboutme.html.php', 'title' => $title,
          'pic' => $pic];
     }
+    public function filemanager()
+    {
+        $title = 'File manager';
+        $pic = "/img/headpic.jpg";
+
+        return ['template' => 'filemanager.html.php', 'title' => $title,
+         'pic' => $pic];
+    }
  
     
 

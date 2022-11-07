@@ -32,7 +32,7 @@
     
     
     
-      <div class="row">
+      <div id="hat" class="row">
         <div class="col-2 col-s-2 ">
       <img class="img" src="/img/olga.jpg" style="padding:none ;">
     </div>

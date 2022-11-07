@@ -44,3 +44,12 @@
     background-color: #4CAF50;
     color: white;
 }
+.crosdelite{background-color: red;color:white; width: 30px; text-align: center; height: 30px;
+border-radius:20px;}
+
+
+.editbuton{
+        text-decoration: none; float: left;
+        padding: 5px; background-color: green; border-radius:10px; color: #fff ;
+        
+    }

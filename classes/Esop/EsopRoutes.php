@@ -55,6 +55,8 @@ $routes = [
 'login' => ['GET' => ['controller' => $loginController,	'action' => 'loginForm'	],
 	'POST' => ['controller' => $loginController,'action' => 'processLogin']],
 
+'filemanager' => ['GET' => [ 'controller' => $certificatesController, 	'action' => 'filemanager']],	
+
 'certificates/list' => ['GET' => [ 'controller' => $certificatesController, 	'action' => 'list']],			
 'certificate/delete' => ['POST' => [ 'controller' => $certificatesController, 	'action' => 'delete'],'login' => true],
 'certificate/edit' => ['POST'=> ['controller' => $certificatesController, 'action' => 'saveEdit'],
