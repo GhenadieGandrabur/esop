@@ -49,11 +49,11 @@
 
  
  div.gallery {
-     margin: 5px;
-     border: 1px solid #ccc;
-     float: left;
-     width: 150px;
-     
+    width: 150px;
+    height: 250px;
+    float: left;
+    margin: 5px;
+    position: relative;    
  }
 
  div.gallery:hover {
@@ -61,20 +61,27 @@
  }
 
  div.gallery img {
-     width: 100%;
-     height: auto;    
-     padding: 5px;
-     text-align:center ;
+    width: 100%;
+    max-height: 160px;
  }
 
  div.desc {
-     padding: 5px;
-     text-align: center;
-     overflow: hidden;
-     font-size: 12px;
-     color:red;
-   
+        overflow: hidden;
+        font-size: 14px;
+        position: absolute;
+        width: 100%;
+        bottom: 30px;
+        text-align: center;
+        
  }
+ div.editor{
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        
+        
+ }
+ 
 
  
 

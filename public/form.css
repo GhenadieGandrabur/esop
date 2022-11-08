@@ -1,6 +1,6 @@
 
 .formstyle table{width: 100%;}
-.form{background-color: #ccc;  border-radius: 10px;  padding: 10px;  border: 5px #999 solid;}
+.form{ border-radius: 10px;  padding: 10px;  border: 1px #999 solid;}
 .formstyle th{padding-right: 15px; border:none} 
 .formstyle input{padding: 5px;}
 /*.formstyle input[type=submit]{ padding: 5px; border: 2px green solid;border-radius: 5px; background-color: aliceblue;
