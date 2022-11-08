@@ -1,3 +1,6 @@
+
+<?php include "filemanager.html.php"?>  
+
 <div class="row">
 <div class="col-4 col-s-4">
 <?php if(isset($certificate['id'])):?>   

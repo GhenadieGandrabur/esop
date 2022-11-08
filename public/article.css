@@ -68,10 +68,11 @@
  }
 
  div.desc {
-     padding: 15px;
+     padding: 5px;
      text-align: center;
      overflow: hidden;
      font-size: 12px;
+     color:red;
    
  }
 
@@ -80,7 +81,8 @@
 .mymenu {
     overflow: hidden;
     clear: both;
-    border-bottom:3px #4CAF50 solid;
+    border-bottom:3px #4CAF50 solid ;
+    
 }
 
 .mymenu a {
