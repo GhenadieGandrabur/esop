@@ -42,7 +42,7 @@ $images = glob($dir_name."*");
     <?php foreach($images as $image):?>     
     <div  style="width:150px; height:230px;  float:left;  margin:5px; position: relative;" class="b">                           
                           
-    <img  style="width:100%; max-height: 160px;"  src='<?=$image?>'  > 
+    <img  style="width:100%; max-height: 160px;"  src='<?=$image?>' onclick="pickTheImage(this.src)" > 
     
     <p style="overflow: hidden; font-size:10px; position: absolute;  width: 100%;  bottom: 30px; ">'<?= $image?>'</p>  
     <p style=" position: absolute;  width: 100%;  bottom: 0px;  ">❌</p>  
@@ -56,15 +56,14 @@ $images = glob($dir_name."*");
 
 <div class="col-2 col-s-2">    
 
-<img id="myImage" src="" width="50">
-<input id="srcc" name="srcc">
-<p> -- <?= strtok($image)?></p>
-</div>
 
+
+</div>
 </div>
 
 <script>
 document.getElementById('hat').style.display='none';
+/**
 var getAllImages = document.getElementsByTagName('img');
 console.log(getAllImages)
 for (var i = 0; i < getAllImages.length; i++) {
@@ -74,5 +73,9 @@ document.getElementById('myImage').src = (this.getAttribute('src'))
 document.getElementById('srcc').value=(this.getAttribute('src'))
 })
 }(i))
-}
+}*/
+function pickTheImage(src) {
+    window.opener.postMessage(src,"*");
+    window.close();
+  }
 </script>
