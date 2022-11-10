@@ -43,7 +43,7 @@
  <script>
         function handleClick(event) {
             event.preventDefault();
-            window.open("/filemanager", "filemanager", "width=600,height=500");
+            window.open("/filemanager", "filemanager");
         }
 
         window.addEventListener('message', function (event) {

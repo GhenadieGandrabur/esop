@@ -26,5 +26,5 @@
         </div>
     </div>
 
+    <div class="pd1  tc" style="border-top:2px #333 solid" >&copy; Cubit <?=date('Y')?></div>
   </div>
-    <div class="bl pd1" style="text-align:center ;">&copy; Cubit <?=date('Y')?></div>
