@@ -4,36 +4,28 @@
 </div>
 <div class="col-8 col-s-8">
 <h3>Edit event:</h3>                                    
-<form action="" method="post" enctype="multipart/form-data" class="eventform">           
+<form action="" method="post"  class="eventform">           
 <input id="id" name="event[id]" value="<?=$event['id']?? null?>" type="hidden"> <br>       
 <label for = "topic" >Topic of the event:</label><br>
 <input   type="text" id ="topic" name="event[topic]" value="<?= $event['topic'] ?? '' ?>"><br><hr><br>
 <div class="row">
 <div class = "col-4 col-s-4 tc">            
-<img src="/img/<?= $event['eventimage'] ?? '' ?>" width="100" height="auto"><br>
-<p>current image</p>
+    <p>Current image</p>
+<img  id="event_src" src="/img/<?= $event['eventimage'] ?? 'no image.jpg' ?>" width="100" height="auto"><br>
 </div>
 <div class = "col-4 col-s-4 tc"> 
-<p>Change image</p>           
-<input type="hidden" id="image" name="event[eventimage]" value="<?=$event['eventimage']??''?? ''?>">           
-<input  type="file" id ="pic" name="pic" accept="image/*" >
+
+<a class = "button button_edit" href="/filemanager" onclick="handleClick(event)">Select an image to change the old one.</a>          
+<input  type="hidden"  id="eventsrc" name="event[eventimage]" value="<?=$event['eventimage']?? ''?>"> <br>
 </div>
 <div class = "col-4 col-s-4 tc"> 
-<img id = "pic2" src="/img/" width="100" height="auto"><br>
-<p>Just selected</p>
+    <p>Selected image.</p>
+<img id = "srcsmall" src="/img/no image.jpg" width="100" height="auto"><br>
+<p style="font-size:10px;"> To save it press Save button below.</p>
 </div>
 </div>
 <hr><br>
-<script>
-const fileInput = document.querySelector("#pic");
-fileInput.addEventListener("change", () => {
-for (const file of fileInput.files) {
-document.getElementById('image').value = "";
-document.getElementById('image').value += `${file.name}`;
-document.getElementById('pic2').src += `${file.name}`;
-}
-});
-</script>
+
 
 
 
@@ -44,3 +36,19 @@ document.getElementById('pic2').src += `${file.name}`;
 </div>        
 <div class="col-2 col-s-2"></div>
 </div>
+
+<script>
+ function handleClick(event) {
+            event.preventDefault();
+            window.open("/filemanager", "filemanager", "width=800,height=500");
+        }
+
+        window.addEventListener('message', function (event) {
+            document.getElementById('eventsrc').value = event.data;
+            let srcpath = document.getElementById('eventsrc').value;
+            let lastslash = srcpath.lastIndexOf("/");
+            let clearedsrc = srcpath.substring(lastslash+1);
+            document.getElementById('eventsrc').value = clearedsrc;                         
+            document.getElementById('srcsmall').src = `/img/${clearedsrc}`;  
+        });
+</script>
