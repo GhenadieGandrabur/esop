@@ -45,15 +45,26 @@ $images = glob($dir_name."*");
     <img  style="width:100%; max-height: 160px;"  src='<?=$image?>' onclick="pickTheImage(this.src)" > 
     
   
-    <p  style=" position: absolute;right:0; font-size:10px;">❌</p>  
+  <form action="" method="POST">
+    <input type="hidden" name="picForDelete" value="<?=$image?>">
+    <input type="submit" value="❌">
+  </form> 
     </div>                
     <?php endforeach;?>   
 </div>
 </div>
+<?php
+if(isset($_POST['picForDelete'])){
+$delPic = $_POST['picForDelete'];
+if(is_file($delPic)){
+  unlink($delPic);
+}else{
+  print_r($delPic);
 
+}
+}
 
-
-
+?>
 <div class="col-2 col-s-2">    
 
 
