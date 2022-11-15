@@ -22,7 +22,6 @@ move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name);
 }
 $dir_name =  "img/";
 $images = glob($dir_name."*");
-
 ?>
 
 <div class="row b">
