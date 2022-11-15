@@ -20,13 +20,11 @@
     <div id="caption"></div>
   </div>
 
-  <div class="desc"><?=$certificate['certificate_title']??'' ?></div>
+ 
   
   <?php if($userId>0):?>
     <div class="editor">
-      <a class="editbuton" href="/certificate/edit?id=<?= $certificate['id'] ?>">Edit</a>
-      
-      
+      <a class="editbuton" href="/certificate/edit?id=<?= $certificate['id'] ?>">Edit</a>      
       <form  action="/certificate/delete" method="post">
         <input type="hidden" name="id" value="<?= $certificate['id'] ?>">
         <input class="crosdelite" style="float:right"   type="submit" value="X">      
@@ -37,9 +35,6 @@
   </div>
     <?php endforeach;?>
 
-
-
-
 </div>
 
 </div>
@@ -47,6 +42,8 @@
 <div class="col-2 col-s-2">
 
 </div>
+<script>
 
+</script>
 </div>
 
