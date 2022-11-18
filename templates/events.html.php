@@ -51,16 +51,6 @@
 </div>
 
 <div class="col-2 col-s-2" >
-<?php if ( $_SERVER['REQUEST_METHOD'] === 'GET') {  
-   echo "GET";
-   echo '<br>';
-   echo ltrim(strtok($_SERVER['REQUEST_URI'], '?'), '/');
-   '<br>';  
-}
-else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
- echo "post";
- echo '<br>';
- echo ltrim(strtok($_SERVER['REQUEST_URI'], '?'), '/');
-}?>
+
 </div>
 </div>

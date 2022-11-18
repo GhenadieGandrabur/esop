@@ -8,6 +8,7 @@ private $authorsTable;
 private $articlesTable;
 private $authentication;
 private $eventsTable;
+private $examssTable;
 private $certificatesTable;
 private $wordTable;
 private $sptransTable;
@@ -24,6 +25,7 @@ $this->sptransTable = new \Main\DatabaseTable($pdo, 'sptrans', 'id');
 $this->wordTable = new \Main\DatabaseTable($pdo, 'vocabulary', 'id');
 $this->certificatesTable = new \Main\DatabaseTable($pdo, 'certificate_images', 'id');
 $this->eventsTable = new \Main\DatabaseTable($pdo, 'events', 'id');
+$this->examsTable = new \Main\DatabaseTable($pdo, 'exams', 'id');
 $this->authorsTable = new \Main\DatabaseTable($pdo, 'author', 'id');
 $this->authentication = new \Main\Authentication($this->authorsTable, 'email', 'password');
 }
@@ -35,6 +37,7 @@ $sptransController = new \Esop\Controllers\Sptrans($this->sptransTable, $this->a
 $wordController = new \Esop\Controllers\Vocabulary($this->wordTable, $this->authorsTable, $this->authentication);
 $certificatesController = new \Esop\Controllers\Certificates($this->certificatesTable,$this->authentication);
 $eventsController = new \Esop\Controllers\Events($this->eventsTable, $this->authentication);		
+$examsController = new \Esop\Controllers\Exams($this->examsTable, $this->authentication);		
 $authorController = new \Esop\Controllers\Register($this->authorsTable);
 $loginController = new \Esop\Controllers\Login($this->authentication);
 
@@ -70,6 +73,11 @@ $routes = [
 'events/delete' => ['POST'=> ['controller' => $eventsController, 'action' => 'delete'],'login' => true],
 'events/edit' => ['POST'=> ['controller' => $eventsController, 'action' => 'saveEdit'],
 				'GET'=> ['controller' => $eventsController, 'action' => 'edit'], 'login' => true],
+
+'exams/list' => ['GET'=> ['controller' => $examsController, 'action' => 'list'],],
+'exams/delete' => ['POST'=> ['controller' => $examsController, 'action' => 'delete'],'login' => true],
+'exams/edit' => ['POST'=> ['controller' => $examsController, 'action' => 'saveEdit'],
+				'GET'=> ['controller' => $examsController, 'action' => 'edit'], 'login' => true],
 
 'word/list' => ['GET'=> ['controller' => $wordController, 'action' => 'list'],],
 'word/delete' => ['POST'=> ['controller' => $wordController, 'action' => 'delete'],'login' => true],

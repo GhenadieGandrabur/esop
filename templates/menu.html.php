@@ -25,7 +25,7 @@
     </div>
   </div> 
   <a href="/word/list">Vocabulary</a>
-  <a href="/article/list">International Exam Material</a>
+  <a href="/exams/list">International Exam Material</a>
   <a href="/events/list">Events</a>
   <a href="/contacts">Contacts</a>
   
