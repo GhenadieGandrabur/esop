@@ -6,7 +6,7 @@
     </div>
 
 
-  <div class="col-10 col-s-10" style="padding:30px ;">
+  <div class="col-10 col-s-10" style="padding:50px ;">
   <h4 style="color:red ;">Vocabulary. <p style="color:black;  display:inline; "><?= $totalwords?> words in vocabulary.</p></h4>
 <p>
   <form action="" method ="get" >
