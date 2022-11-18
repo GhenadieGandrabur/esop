@@ -18,10 +18,10 @@
     </button>
     <div class="dropdown-content">
       <a href="#">Oral Consecutive Translation</a>
-      <a href="#">Conference interpreting</a>
+      <a href="#">Conference Interpreting</a>
       <a href="/sptrans/list">Specialized Translation</a>
       <a href="#">TAM</a>
-      <a href="#">Buisnes Correspondence</a>
+      <a href="#">Business Correspondence</a>
     </div>
   </div> 
   <a href="/word/list">Vocabulary</a>
