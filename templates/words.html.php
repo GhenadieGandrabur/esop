@@ -15,7 +15,7 @@
     <option value="economics">Economics</option>
     <option value="politics">Politics</option>    
   </select>
-  <input type="submit" value="Submit"> You chose:<b><?= $_GET['category']?></b> category
+  <input style="padding:5px" type="submit" value="Submit"> You chose:<b><?= $_GET['category']?></b> category
 </p>
 <h4><?php if ($userId>0) : ?>
 <a class= "button button_edit" href="/word/edit">Add a new word</a>
