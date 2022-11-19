@@ -35,6 +35,7 @@
 </div>
 
 <script>
+    document.getElementById('hat').style.display='none';
  function handleClick(event) {
             event.preventDefault();
             window.open("/filemanager", "filemanager", "width=800,height=500");

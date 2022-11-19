@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 17, 2022 at 01:40 AM
+-- Generation Time: Nov 19, 2022 at 12:57 AM
 -- Server version: 5.6.41-84.1
 -- PHP Version: 7.3.6
 
@@ -92,16 +92,12 @@ CREATE TABLE `certificate_images` (
 INSERT INTO `certificate_images` (`id`, `certificate_src`, `certificate_title`) VALUES
 (11, 'Easter-school-participants-_page-0051-1536x1087.jpg', 'Professional development'),
 (16, 'virtual_card.png', 'Virtual card'),
-(17, 'vocabulary_revew.png', 'Vocabulari revew'),
-(18, '101556226_3050487138351285_8699933785396871168_n-1024x724.png', 'Continuos professional development'),
-(19, 'mpcpd2805202056.png', ''),
 (20, 'MPCD1405202051.png', ''),
 (21, 'limba_noastra.jpg', ''),
 (22, 'diploma_de_excelenta.jpg', ''),
 (24, 'erasmus.jpg', ''),
 (27, 'dreptul_de_autor.jpg', ''),
 (30, 'cerificate_completion.jpg', 'Name'),
-(35, 'cerificate_completion.jpg', 'Certificate'),
 (38, 'mpcpd2805202056.png', '');
 
 -- --------------------------------------------------------
@@ -140,6 +136,28 @@ INSERT INTO `events` (`id`, `topic`, `eventtext`, `eventimage`) VALUES
 (15, 'International Workshop: \'\'Basis of Design\'\', Edineț, Fălești,18.10.2022 ', '<p>AGENDA Stakeholders workshop Design concepts for: &ldquo;Edinet Water Treatment Plant (WTP) &amp; Water Transmission System&quot;</p><p>Date &amp; time: October 18, 2022, 10:00 a.m. &ndash; 14:00 p.m.</p><p>Location: Mayor&#39;s Office, Conference Hall 30 Octavian Cerempei Str, town of Edinet</p><p>&nbsp;</p>', ''),
 (16, 'International Conference on: \'\'Investments in Renewable Energy and Energy Efficiency:  Opportunities for the Moldovan Market\'\', Jazz Hotel, Violin Room, Tuesday, October 25, 2022', '<p>AGENDA Tuesday, October 25, 2022 Investments in Renewable Energy and Energy Efficiency: Opportunities for the Moldovan Market Jazz Hotel, Violin Room Objectives: 1. Present and obtain feedback on key findings from MESA&rsquo;s analysis on stakeholders, obstacles, and opportunities in Moldova&rsquo;s renewable energy and energy efficiency market. 2. Introduce the MESA Private Sector Partnership (MPSP) to build relationships amongst key stakeholders in the renewable energy industry, facilitate collaboration and effective dialogue, and boost awareness of and investment in renewable energy and energy efficiency. The MPSP will provide a forum for regular engagement amongst industry stakeholders, potentially evolving into an industry association. Agenda 9h00 Registration of participants 9h45 Opening ▪ Armen Arzumanyan, Chief of Party MESA ▪ Scott Richards, Principal, Head of Eastern Europe Advisory at CrossBoundary 10h00 Session 1 &ndash; Presentation of findings (part A) ▪ Presenter: Igor Pavlov, Senior Associate, CEE Team at CrossBoundary o Report&rsquo;s Objectives &amp; Methodology o Moldova Energy Sector &amp; Role of Renewables o Stakeholders Map 10h30 Session 1 &ndash; Presentation of findings (part B) ▪ Presenter: Nikita Sergeev, Senior Associate, CEE Team at CrossBoundary o Map of Obstacles &amp; Opportunities o Selected Case Studies 11h00 Coffee Break 11h15 Session 2: Workshop &ndash; Work-in-groups: prioritization of presented obstacles and potential interventions ▪ Presenters: Igor Pavlov, Senior Associate, CEE Team at CrossBoundary Nikita Sergeev, Senior Associate, CEE Team at CrossBoundary 11h45 Q&amp;A &ndash; Discussion of presented findings and groups&rsquo; workshop ▪ Presenters: Scott Richards, Principal, Head of Eastern Europe Advisory at CrossBoundary Igor Pavlov, Senior Associate, CEE Team at CrossBoundary Nikita Sergeev, Senior Associate, CEE Team at CrossBoundary 12h45 Introduce the Moldova Private Sector Partnership (MPSP) ▪ Presenters: Igor Pavlov, Senior Associate, CEE Team at CrossBoundary Nikita Sergeev, Senior Associate, CEE Team at CrossBoundary o Introduce MPSP concept: building relationships across stakeholders to share and take advantage of business opportunities, collectively respond to and resolve challenges / obstacles o Q&amp;A and Feedback on MPSP concept 2 13h00 Lunch 14h00 Recap, closing remarks</p>', '311382135_10220698343400883_9094817973796450615_n.jpg'),
 (17, 'FORUM INTERNAȚIONAL: ,, AZALEYA ECO-FORUM 2022: COLABORARE, STRATEGIE ȘI DEZVOLTARE, Digital Center, Chișinău, JOI, 27 OCTOMBRIE 2022', '<p><a href=\"https://www.facebook.com/hashtag/azaleya?__eep__=6&amp;__cft__[0]=AZVGEBaLVocJfNYKuwpoDFAQQQ5GF-CAf7zMYNG6bzKuR3GpxOs2CMLO8JWcgNO-qdIazHPFJdVdUUkn5EDwgTpiyTWTdDPYmC_nr8gMHyvFJ8vvj9ZCdwWGydUzAbOpSmk&amp;__tn__=*NK-R\">#Azaleya</a> Eco-Forum 2022 - primul și cel mai mare Eco-Forum din Republica Moldova.</p><p>Oaspeții de onoare ai evenimentului au fost Directorul General WEEE Forum, Pascal Leroy, care a vizitat țara noastră pentru prima dată și partenerii strategici din Rom&acirc;nia: Dragoș Călugăru, Director General <a href=\"https://www.facebook.com/organizatiaecotic/?__cft__[0]=AZVGEBaLVocJfNYKuwpoDFAQQQ5GF-CAf7zMYNG6bzKuR3GpxOs2CMLO8JWcgNO-qdIazHPFJdVdUUkn5EDwgTpiyTWTdDPYmC_nr8gMHyvFJ8vvj9ZCdwWGydUzAbOpSmk&amp;__tn__=kK-R\">Organizația ECOTIC</a> și Mihaela Sofronea - PR Manager Green Group.</p><p>Evenimentul a adunat peste 100 de producători și distribuitori de Echipamente Electrice și Electronice, Baterii și Acumulatori din țară și a avut drept scop &icirc;mbunătățirea comunicării &icirc;ntre Asociație cu partenerii și membrii implicați &icirc;n procesul de gestionare Eco-responsabilă și Eco-rațională a <a href=\"https://www.facebook.com/hashtag/deee?__eep__=6&amp;__cft__[0]=AZVGEBaLVocJfNYKuwpoDFAQQQ5GF-CAf7zMYNG6bzKuR3GpxOs2CMLO8JWcgNO-qdIazHPFJdVdUUkn5EDwgTpiyTWTdDPYmC_nr8gMHyvFJ8vvj9ZCdwWGydUzAbOpSmk&amp;__tn__=*NK-R\">#DEEE</a> (Deșeuri de Echipamente Electrice și Electronice) și <a href=\"https://www.facebook.com/hashtag/dba?__eep__=6&amp;__cft__[0]=AZVGEBaLVocJfNYKuwpoDFAQQQ5GF-CAf7zMYNG6bzKuR3GpxOs2CMLO8JWcgNO-qdIazHPFJdVdUUkn5EDwgTpiyTWTdDPYmC_nr8gMHyvFJ8vvj9ZCdwWGydUzAbOpSmk&amp;__tn__=*NK-R\">#DBA</a> (Deșeuri de Baterii și Acumulatori).</p><p>&Icirc;n cadrul evenimentului a fost lansat spotul educațional animat &ldquo;Azaleya&rdquo; destinat copiilor, precum și prezentată mascota <a href=\"https://www.facebook.com/hashtag/azaleya?__eep__=6&amp;__cft__[0]=AZVGEBaLVocJfNYKuwpoDFAQQQ5GF-CAf7zMYNG6bzKuR3GpxOs2CMLO8JWcgNO-qdIazHPFJdVdUUkn5EDwgTpiyTWTdDPYmC_nr8gMHyvFJ8vvj9ZCdwWGydUzAbOpSmk&amp;__tn__=*NK-R\">#Azaleya</a>.</p><p>Președintele MoldControl, Iulian Gamureac a menționat că: &ldquo;&Icirc;n această perioadă dificilă, &icirc;n pragul crizei energetice, este extrem de important să vedem deșeurile nu ca un gunoi, dar ca o resursă. Din acest motiv am dat curs acestui eveniment internațional important pentru a sensibiliza și promova această trecere inteligentă de la economia liniară la cea circulară. Iar Responsabilitatea Extinsă a Producătorului (<a href=\"https://www.facebook.com/hashtag/rep?__eep__=6&amp;__cft__[0]=AZVGEBaLVocJfNYKuwpoDFAQQQ5GF-CAf7zMYNG6bzKuR3GpxOs2CMLO8JWcgNO-qdIazHPFJdVdUUkn5EDwgTpiyTWTdDPYmC_nr8gMHyvFJ8vvj9ZCdwWGydUzAbOpSmk&amp;__tn__=*NK-R\">#REP</a>) este de fapt un mecanism cheie &icirc;n această tranziție.&rdquo;</p><p>Directorul General WEEE Forum, Pascal Leroy a subliniat importanța colaborării la nivel internațional al Asociației MoldControl cu partenerii strategici: &bdquo;Forumul DEEE este un bazin imens de cunoștințe și experiență cu privire la toate aspectele legate de DEEE și pentru că, &icirc;n general, fiecare sistem</p><p>funcționează doar &icirc;ntr-o singură țară, noi nu concurăm, dar suntem bucuroși să &icirc;mpărtășim cunoștințele și experiența noastră. De asemenea, suntem fericiți să putem &icirc;nvăța din experiențele noilor noștri membri.&rdquo;</p><p>Evenimentul internațional, Azaleya Eco-Forum 2022, a fost organizat &icirc;n parteneriat cu operatorul autorizat &icirc;n gestionarea <a href=\"https://www.facebook.com/hashtag/deee?__eep__=6&amp;__cft__[0]=AZVGEBaLVocJfNYKuwpoDFAQQQ5GF-CAf7zMYNG6bzKuR3GpxOs2CMLO8JWcgNO-qdIazHPFJdVdUUkn5EDwgTpiyTWTdDPYmC_nr8gMHyvFJ8vvj9ZCdwWGydUzAbOpSmk&amp;__tn__=*NK-R\">#DEEE</a> și <a href=\"https://www.facebook.com/hashtag/dba?__eep__=6&amp;__cft__[0]=AZVGEBaLVocJfNYKuwpoDFAQQQ5GF-CAf7zMYNG6bzKuR3GpxOs2CMLO8JWcgNO-qdIazHPFJdVdUUkn5EDwgTpiyTWTdDPYmC_nr8gMHyvFJ8vvj9ZCdwWGydUzAbOpSmk&amp;__tn__=*NK-R\">#DBA</a> - <a href=\"https://www.facebook.com/Moldrec.md?__cft__[0]=AZVGEBaLVocJfNYKuwpoDFAQQQ5GF-CAf7zMYNG6bzKuR3GpxOs2CMLO8JWcgNO-qdIazHPFJdVdUUkn5EDwgTpiyTWTdDPYmC_nr8gMHyvFJ8vvj9ZCdwWGydUzAbOpSmk&amp;__tn__=-]K-R\">MOLDREC</a>, <a href=\"https://www.facebook.com/agentiamediu/?__cft__[0]=AZVGEBaLVocJfNYKuwpoDFAQQQ5GF-CAf7zMYNG6bzKuR3GpxOs2CMLO8JWcgNO-qdIazHPFJdVdUUkn5EDwgTpiyTWTdDPYmC_nr8gMHyvFJ8vvj9ZCdwWGydUzAbOpSmk&amp;__tn__=kK-R\">Agenția de Mediu</a>, <a href=\"https://www.facebook.com/MinisterulMediuluiMoldova?__cft__[0]=AZVGEBaLVocJfNYKuwpoDFAQQQ5GF-CAf7zMYNG6bzKuR3GpxOs2CMLO8JWcgNO-qdIazHPFJdVdUUkn5EDwgTpiyTWTdDPYmC_nr8gMHyvFJ8vvj9ZCdwWGydUzAbOpSmk&amp;__tn__=-]K-R\">Ministerul Mediului al Republicii Moldova</a>, <a href=\"https://www.facebook.com/ipm.mediu?__cft__[0]=AZVGEBaLVocJfNYKuwpoDFAQQQ5GF-CAf7zMYNG6bzKuR3GpxOs2CMLO8JWcgNO-qdIazHPFJdVdUUkn5EDwgTpiyTWTdDPYmC_nr8gMHyvFJ8vvj9ZCdwWGydUzAbOpSmk&amp;__tn__=-]K-R\">Inspectoratul Pentru Protecția Mediului</a>.</p>', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `exams`
+--
+
+CREATE TABLE `exams` (
+  `id` int(10) NOT NULL,
+  `topic` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `examtext` text COLLATE utf8_unicode_ci NOT NULL,
+  `examimage` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `exams`
+--
+
+INSERT INTO `exams` (`id`, `topic`, `examtext`, `examimage`) VALUES
+(1, 'TOEFL', '<p><strong>TOEFL iBT Test Resources</strong></p><p>The&nbsp;TOEFL iBT&nbsp;test helps you stand out confidently in English. It&#39;s the only test that measures all four academic English skills &mdash; reading, listening, speaking and writing &mdash; the way they are actually used in a classroom, so you can be confident you&rsquo;ll stand out to universities where it counts.</p>', 'toefl.jpg'),
+(2, 'Cambridge', '<p>The Cambridge English tests are a suite of English certification exams, each of which delivers a test-specific certificate that is valid indefinitely. Each Cambridge exam tests a specific level of English, so you must first choose which exam is appropriate for your level for by taking the Cambridge placement test onlin</p>', 'cam_bringe.jpg'),
+(3, 'IELTS', '<p>What is IELTS?</p><p>The International English Language Testing System (IELTS) is designed to help you work, study or migrate to a country where English is the native language. This includes countries such as Australia, Canada, New Zealand, the UK and USA.</p><p>Your ability to listen, read, write and speak in English will be assessed during the test. IELTS is graded on a scale of 1-9.&nbsp;&nbsp;</p><p>IELTS is jointly owned by the British Council, IDP: IELTS Australia and Cambridge English.</p><p>&nbsp;</p>', 'ielts_small.jpg');
 
 -- --------------------------------------------------------
 
@@ -382,6 +400,12 @@ ALTER TABLE `events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `exams`
+--
+ALTER TABLE `exams`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `vocabulary`
 --
 ALTER TABLE `vocabulary`
@@ -420,6 +444,12 @@ ALTER TABLE `contacts`
 --
 ALTER TABLE `events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `exams`
+--
+ALTER TABLE `exams`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `vocabulary`

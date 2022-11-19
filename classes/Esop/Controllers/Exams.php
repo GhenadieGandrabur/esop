@@ -34,7 +34,7 @@ class Exams
         }
 
         $title = 'exam list';
-        $pic = "/img/cambridge.jpg";
+        $pic = "/img/examsbanner.gif";
         $totalexams = $this->examTable->total();
          $author = $this->authentication->getUser();
 
@@ -79,7 +79,7 @@ class Exams
         }
 
         $title = 'Edit exam';
-        $pic = "/img/cambridge.jpg";
+        $pic = "/img/examsbanner.gif";
 
         return [
             'template' => 'examsEdit.html.php',
