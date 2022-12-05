@@ -5,8 +5,8 @@
 <h3>Edit exam:</h3>                                    
 <form action="" method="post"  class="examform">           
 <input id="id" name="exam[id]" value="<?=$exam['id']?? null?>" type="hidden"> <br>       
-<label for = "topic" >Topic of the exam:</label><br>
-<input   type="text" id ="topic" name="exam[topic]" value="<?= $exam['topic'] ?? '' ?>"><br><hr><br>
+<label for = "topicInput" >Topic of the exam:</label><br>
+<input   type="text" id ="topicInput" name="exam[topic]" value="<?= $exam['topic'] ?? '' ?>"><br><hr><br>
 <div class="row">
 <div class = "col-4 col-s-4 tc">            
     <p>Current image</p>
@@ -35,7 +35,6 @@
 </div>
 
 <script>
-    document.getElementById('hat').style.display='none';
  function handleClick(event) {
             event.preventDefault();
             window.open("/filemanager", "filemanager", "width=800,height=500");

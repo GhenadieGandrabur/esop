@@ -12,6 +12,7 @@ private $examssTable;
 private $certificatesTable;
 private $wordTable;
 private $sptransTable;
+private $categoriesTable;
 
 
 
@@ -28,18 +29,21 @@ $this->eventsTable = new \Main\DatabaseTable($pdo, 'events', 'id');
 $this->examsTable = new \Main\DatabaseTable($pdo, 'exams', 'id');
 $this->authorsTable = new \Main\DatabaseTable($pdo, 'author', 'id');
 $this->authentication = new \Main\Authentication($this->authorsTable, 'email', 'password');
+$this->categoriesTable = new \Main\DatabaseTable($pdo, 'category', 'id');
+
 }
 
 public function getRoutes(): array
 {
 $articleController = new \Esop\Controllers\Article($this->articlesTable, $this->authorsTable, $this->authentication);
 $sptransController = new \Esop\Controllers\Sptrans($this->sptransTable, $this->authentication);
-$wordController = new \Esop\Controllers\Vocabulary($this->wordTable, $this->authorsTable, $this->authentication);
+$wordController = new \Esop\Controllers\Vocabulary($this->wordTable, $this->authorsTable, $this->categoriesTable, $this->authentication);
 $certificatesController = new \Esop\Controllers\Certificates($this->certificatesTable,$this->authentication);
 $eventsController = new \Esop\Controllers\Events($this->eventsTable, $this->authentication);		
 $examsController = new \Esop\Controllers\Exams($this->examsTable, $this->authentication);		
 $authorController = new \Esop\Controllers\Register($this->authorsTable);
 $loginController = new \Esop\Controllers\Login($this->authentication);
+$categoryController = new \Esop\Controllers\Category($this->categoriesTable);
 
 $routes = [
 '' => ['GET' => [ 'controller' => $articleController, 	'action' => 'home']],
@@ -85,6 +89,11 @@ $routes = [
 			'GET'=> ['controller' => $wordController, 'action' => 'edit'], 'login' => true],
 
 'contacts' => ['GET'=> ['controller' => $articleController, 'action' => 'contacts'],],
+
+'category/edit' => [ 'POST' => ['controller' => $categoryController, 'action' => 'saveEdit' ],
+                      'GET' => ['controller' => $categoryController, 'action' => 'edit' ], 'login' => true ],
+'category/list' => ['GET' => ['controller' => $categoryController,'action' => 'list'],'login' => true],
+'category/delete' => [ 'POST' => ['controller' => $categoryController, 'action' => 'delete' ],'login' => true],
 
 ];
 

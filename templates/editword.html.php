@@ -17,13 +17,11 @@
                 <label for="ru">RU: </label><br>
                 <input size="30" id="ru" name="word[ru]" value = "<?= $word['ru'] ?? '' ?>"><br>
                 
-                <label for="category">Category: </label><br>
-                <select id='category' name="word[category]">        
-                    <option value="<?=$word["category"]=  'economics'?>">Economics</option>
-                    <option value="<?=$word["category"]=  'economics2'?>">Economics 2</option>
-                    <option value="<?=$word["category"]=  'politics'?>">Politcs</option>
-                    <option value="<?=$word["category"]=  'politics2'?>">Politics 2</option>               
-                </select><br><br>      
+                <p>Select categories for this word:</p>
+                <?php foreach ($categories as $category): ?>
+                <input type="checkbox" name="category[]" value="<?=$category->id?>" /> 
+                <label><?=$category->name?></label>
+                <?php endforeach; ?>     
                 <input  class="button button_edit" type="submit" name="submit" value="Save">
             </form>
         </div>

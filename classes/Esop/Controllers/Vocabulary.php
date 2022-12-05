@@ -9,12 +9,14 @@ class Vocabulary
 {
   private $authorsTable;
     private $vocabularyTable;
+    private $categoriesTable;
     private $authentication;
 
-    public function __construct(DatabaseTable $vocabularyTable, DatabaseTable $authorsTable, Authentication $authentication)
+    public function __construct(DatabaseTable $vocabularyTable, DatabaseTable $authorsTable,  DatabaseTable $categoriesTable, Authentication $authentication,)
     {
         $this->vocabularyTable = $vocabularyTable;
         $this->authorsTable = $authorsTable;
+        $this->categoriesTable = $categoriesTable;
         $this->authentication = $authentication;
     }
 
@@ -41,7 +43,7 @@ class Vocabulary
         $pic = '/img/cambridge.jpg';
 
         $totalwords = $this->vocabularyTable->total();
-        $headerpic = "/img/headpic.jpg";
+     
 
         $author = $this->authentication->getUser();
 
@@ -84,6 +86,7 @@ class Vocabulary
     public function edit()
     {
         $author = $this->authentication->getUser();
+        $categories = $this->categoriesTable->findAll();
 
         if (isset($_GET['id'])) {
             $word = $this->vocabularyTable->findById($_GET['id']);
@@ -96,7 +99,8 @@ class Vocabulary
             'title' => $title,
             'variables' => [
                 'word' => $word ?? null,
-                'userId' => $author['id'] ?? null
+                'userId' => $author['id'] ?? null,
+                'categories' => $categories
             ]
         ];
     }   
