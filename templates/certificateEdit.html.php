@@ -24,9 +24,9 @@
 <tr><th></th>
 <td> <input id="id" type="hidden" name="certificate[id]" value="<?=$certificate['id'] ??''?>"></td> </tr>
 <tr><th> <label  for="certificate_src"></label></th>
-<td><input type="hidden" id="certificat_src"  name="certificate[certificate_src]" value="<?=$certificate['certificate_src']??''?>"></td> </tr>
+<td><input type="hidden" id="certificat_src"  name="certificate[certificate_src]" value="<?=$certificate->certificate_src??''?>"></td> </tr>
 <tr><th> <label for="title">Image title</label>  </th>
-<td> <input id='title' name="certificate[certificate_title]" value="<?=$certificate['certificate_title']??''?>"></td> </tr>
+<td> <input id='title' name="certificate[certificate_title]" value="<?=$certificate->certificate_title ??''?>"></td> </tr>
 <tr><th></th><td><input class="button button_save" type="submit" value="Save" name='uploadfile'> </td> </tr>             
 </table>
 </form>           

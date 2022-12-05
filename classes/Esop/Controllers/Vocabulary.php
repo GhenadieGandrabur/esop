@@ -22,13 +22,13 @@ class Vocabulary
 
     public function list()
     {
-        $result = $this->vocabularyTable->findAll();
+        $words = $this->vocabularyTable->findAll();
 
-        $words = [];
+         /*$words = [];
         foreach ($result as $word) {
             
 
-            $words[] = [
+           $words[] = [
                 'id' => $word['id'],
                 'en' => $word['en'],
                 'definition' => $word['definition'],
@@ -36,11 +36,11 @@ class Vocabulary
                 'ru' => $word['ru'],
                 'category'=>$word['category']              
             ];
-        }
+        }*/
 
 
         $title = 'Vocabulary';
-        $pic = '/img/cambridge.jpg';
+//$pic = '/img/cambridge.jpg';
 
         $totalwords = $this->vocabularyTable->total();
      
@@ -55,7 +55,7 @@ class Vocabulary
                 'variables' => [
                     'totalwords' => $totalwords,
                     'words' => $words,
-                    'userId' => $author['id'] ?? null
+                    'userId' => $author->id ?? null
                 ]
             ];
     }
@@ -99,7 +99,7 @@ class Vocabulary
             'title' => $title,
             'variables' => [
                 'word' => $word ?? null,
-                'userId' => $author['id'] ?? null,
+                'userId' => $author->id ?? null,
                 'categories' => $categories
             ]
         ];

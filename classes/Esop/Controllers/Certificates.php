@@ -19,16 +19,16 @@ class Certificates
 
     public function list()
     {
-        $result = $this->certificate_imagesTable->findAll();
+        $certificates = $this->certificate_imagesTable->findAll();
 
-        $certificates = [];
+/*$certificates = [];
         foreach ($result as $certificate) {
             $certificates[] = [
                 'id' =>$certificate['id'],
                 'certificate_src'=>$certificate['certificate_src'],
                 'certificate_title' =>$certificate['certificate_title']
             ];
-        }
+        }*/
 
         $title = 'Certificates list';
         $pic = "/img/cambridge.jpg";
@@ -40,7 +40,7 @@ class Certificates
                 'title' => $title,
                 'pic'=>$pic,
                 'variables'=>[
-                    'totalcertificates'=>$totalcertificates, 'certificates'=>$certificates, 'userId'=>$author['id']?? null
+                    'totalcertificates'=>$totalcertificates, 'certificates'=>$certificates, 'userId'=>$author->id?? null
                 ]                
             ];
     }

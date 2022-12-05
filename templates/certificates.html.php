@@ -12,7 +12,7 @@
 <?php foreach ($certificates as $certificate) : ?>
 
   <div class="gallery ">
-    <img id="myImg" onclick="myFunc(this)"  src="/img/<?=$certificate['certificate_src']?>" alt="<?=$certificate['certificate_title']?>">
+    <img id="myImg" onclick="myFunc(this)"  src="/img/<?=$certificate->certificate_src?>" alt="<?=$certificate->certificate_title?>">
   
     <div id="myModal" class="modal b">
     <span class="close">❎</span>
@@ -24,10 +24,10 @@
   
   <?php if($userId>0):?>
     <div class="editor">
-      <a class="editbuton" href="/certificate/edit?id=<?= $certificate['id'] ?>">Edit</a>      
+      <a class="editbuton" href="/certificate/edit?id=<?= $certificate->id ?>">Edit</a>      
       <form  action="/certificate/delete" method="post">
-        <input type="hidden" name="id" value="<?= $certificate['id'] ?>">
-        <input class="crosdelite" style="float:right"   type="submit" value="X">      
+        <input type="hidden" name="id" value="<?= $certificate->id ?>">
+        <input class="crosdelite" style="float:right"   type="submit" value="❌">      
       </form>
     </div>
     <?php endif;?>
