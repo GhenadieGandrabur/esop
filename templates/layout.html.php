@@ -19,7 +19,7 @@
   </head>
   
   <body> 
-   <div class="container-fluid my-1" style="text-align:right">
+   <div class="my-1" style="text-align:right">
  <a href="https://www.facebook.com/olga.pascari.581" class="fa fa-facebook"></a>
  <a href="https://ms-my.facebook.com/ulim.md/videos/felicitare-olga-pascari-cu-prilejul-29-ani-ulim/231334225578434/" class="fa fa-youtube"></a>
 <a href="#" class="fa fa-twitter"></a>
@@ -40,7 +40,7 @@
     <div class="col-10 col-s-10 " style="  position: relative;">
       
       <?php if(isset($pic)):?> 
-        <img class="img" src="<?=$pic??''?>" >
+        <img class="img" src="<?=$pic??''?>">
         <div style="position: absolute; bottom:20px; right: 20px;  font-size:28px;color:white; text-shadow: 2px 2px #000000;"  >
           English School Olga Pascari<br>
           Languages open doors                    

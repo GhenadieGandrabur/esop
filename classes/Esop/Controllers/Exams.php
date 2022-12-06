@@ -21,19 +21,9 @@ class Exams
 
     public function list()
     {
-        $result = $this->examTable->findAll();
+        $exams = $this->examTable->findAll();      
 
-        $exams = [];
-        foreach ($result as $exam) {
-            $exams[] = [
-                'id' => $exam['id'],
-                'topic'=>$exam['topic'],
-                'examtext' => $exam['examtext'],
-                'examimage' => $exam['examimage']
-            ];
-        }
-
-        $title = 'exam list';
+        $title = 'Exam list';
         $pic = "/img/examsbanner.gif";
         $totalexams = $this->examTable->total();
          $author = $this->authentication->getUser();
@@ -43,7 +33,7 @@ class Exams
                 'title' => $title,
                 'pic'=>$pic,
                 'variables'=>[
-                    'totalexams'=>$totalexams, 'exams'=>$exams, 'userId'=>$author['id']?? null
+                    'totalexams'=>$totalexams, 'exams'=>$exams, 'userId'=>$author->id?? null
                 ]                
             ];
     }

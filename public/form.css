@@ -1,10 +1,20 @@
+.formwork  textarea {float: left; width: 25em; margin-bottom: 1em;  padding: 0.5em;}
+.formwork input  {float: left; width: 15em; margin-bottom: 1em;  padding: 0.5em;}
 
-.formstyle table{width: 100%;}
-.form{ border-radius: 10px;  padding: 10px;  border: 1px #999 solid;}
-.formstyle th{padding-right: 15px; border:none} 
-.formstyle input{padding: 5px;}
-/*.formstyle input[type=submit]{ padding: 5px; border: 2px green solid;border-radius: 5px; background-color: aliceblue;
-color: black; cursor: pointer; width: inherit; width: 100px;} 
-.formstyle input[type=submit]:hover{ border: 2px green solid; background-color: green; color: white; 
-cursor:pointer ;}*/
-.formstyle input[type=text],input[type=password] { padding: 5px 10px;  border-radius: 4px;}
+.formwork label{float: left; width: 10em; margin-bottom: 1em;  padding:0; clear: left; }
+
+.formwork input[type="submit"] {margin-left: 15em; width: auto; padding: 0.5em 1em; clear: both; font-size: 1em;}
+.formwork form {overflow: auto; clear: both; display: block;}*/
+
+.formwork form p {clear: both;}
+.formwork input[type="checkbox"] {float: left; clear: left; width: auto; margin-right: 10px;}
+.formwork input[type="checkbox"] + label {clear: right;}
+
+
+
+.log input,  select, textarea {float: left; width: 10em; margin-bottom: 1em;  padding: 0.5em;}
+.log label{float: left; width: 15em; margin-bottom: 1em;  padding: 0.5em; clear: left; }
+/*.log label {padding: 0; margin: 0;}*/
+.log input[type="submit"] {margin-left: 15em; width: auto; padding: 0.5em 1em; clear: both; font-size: 1em;}
+.log input,  select, textarea {float: left; width: 15em; margin-bottom: 1em;  padding: 0.5em;}
+.log form {overflow: auto; clear: both; display: block;}

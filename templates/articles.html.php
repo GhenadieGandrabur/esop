@@ -11,7 +11,7 @@
 
     <ol>
     <?php foreach ($articles as $article) : ?>
-        <li class="pd05"><a href="#<?= $article['id']?>"><?= $article['topic']?></a></li>
+        <li class="pd05"><a href="#<?= $article->id ?>"><?= $article->topic ?></a></li>
         <?php endforeach; ?>
       </ol>
 
@@ -20,19 +20,19 @@
 <?php endif;?>
 <?php foreach ($articles as $article) : ?>
  
-    <h3 id="<?= $article['id']?>"><?= $article['topic']?></h3>
-    <p class="tj"><?= $article['articleText'] ?></p>
+    <h3 id="<?= $article->id ?>"><?= $article->topic ?></h3>
+    <p class="tj"><?= $article->articleText  ?></p>
     <h5 class="pd1"><a href="#top" class="button" style="float:right"><i class="fa fa-arrow-up" aria-hidden="true"> UP</i></a></h5>    
     <br>
     <hr>
           <?php if($userId > 0):?>
           <table class="edittable">
             <tr>
-              <td><a class="button button_edit" href="/article/edit?id=<?= $article['id'] ?>">Edit</a></td>
-              <td>Date: <?= htmlspecialchars($article['date'], ENT_QUOTES, 'UTF-8') ?></td>
+              <td><a class="button button_edit" href="/article/edit?id=<?= $article->id  ?>">Edit</a></td>
+              <td>Date: <?= htmlspecialchars($article->date , ENT_QUOTES, 'UTF-8') ?></td>
               <td>
                 <form action="/article/delete" method="post">
-                  <input type="hidden" name="id" value="<?= $article['id'] ?>">
+                  <input type="hidden" name="id" value="<?= $article->id  ?>">
                   <input class="button button_delete" type="submit" value="Delete">
                 </form>
               </td>

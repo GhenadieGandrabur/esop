@@ -21,29 +21,21 @@ class Events
 
     public function list()
     {
-        $result = $this->eventTable->findAll();
+        $events  = $this->eventTable->findAll();
 
-        $events = [];
-        foreach ($result as $event) {
-            $events[] = [
-                'id' => $event['id'],
-                'topic'=>$event['topic'],
-                'eventtext' => $event['eventtext'],
-                'eventimage' => $event['eventimage']
-            ];
-        }
+    
 
-        $title = 'event list';
+        $title = 'Events list';
         $pic = "/img/cambridge.jpg";
         $totalEvents = $this->eventTable->total();
-         $author = $this->authentication->getUser();
+        $author = $this->authentication->getUser();
 
         return [
                 'template' => 'events.html.php',
                 'title' => $title,
                 'pic'=>$pic,
                 'variables'=>[
-                    'totalEvents'=>$totalEvents, 'events'=>$events, 'userId'=>$author['id']?? null
+                    'totalEvents'=>$totalEvents, 'events'=>$events, 'userId'=>$author->id ?? null
                 ]                
             ];
     }

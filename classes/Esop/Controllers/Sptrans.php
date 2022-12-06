@@ -30,17 +30,9 @@ class Sptrans
 
     public function list()
     {
-        $result = $this->sptransTable->findAll();
+        $sptrans = $this->sptransTable->findAll();
 
-        $sptrans = [];
-        foreach ($result as $sptran) {
-            $sptrans[] = [
-                'id' => $sptran['id'],
-                'topic'=>$sptran['topic'],
-                'sptrantext' => $sptran['sptrantext'],
-                'sptranimage' => $sptran['sptranimage']
-            ];
-        }
+  
 
         $title = 'sptran list';
         $pic = "/img/cambridge.jpg";
@@ -52,7 +44,7 @@ class Sptrans
                 'title' => $title,
                 'pic'=>$pic,
                 'variables'=>[
-                    'totalsptrans'=>$totalsptrans, 'sptrans'=>$sptrans, 'userId'=>$author['id']?? null
+                    'totalsptrans'=>$totalsptrans, 'sptrans'=>$sptrans, 'userId'=>$author->id ?? null
                 ]                
             ];
     }

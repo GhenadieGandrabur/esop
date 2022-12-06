@@ -20,22 +20,7 @@ class Article
 
     public function list()
     {
-        $result = $this->articlesTable->findAll();
-
-        $articles = [];
-        foreach ($result as $article) {
-            $author = $this->authorsTable->findById($article['authorId']);
-
-            $articles[] = [
-                'id' => $article['id'],
-                'date' => $article['date'],
-                'topic' => $article['topic'],
-                'articleText' => $article['articleText'],
-                'authorId'=>$article['authorId']         
-               
-            ];
-        }
-
+        $articles = $this->articlesTable->findAll();
 
         $title = 'Article list';
         $pic = '/img/cambridge.jpg';
@@ -53,7 +38,7 @@ class Article
                 'variables' => [
                     'totalArticles' => $totalArticles,
                     'articles' => $articles,
-                    'userId' => $author['id'] ?? null
+                    'userId' => $author->id ?? null
                 ]
             ];
     }

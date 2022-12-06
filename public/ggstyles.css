@@ -43,6 +43,7 @@
 #myTable th, #myTable td {
   text-align: left;
   padding: 12px;
+  vertical-align: top;
 }
 
 #myTable tr,td, th{
@@ -57,3 +58,33 @@
   background-color: #f1f1f1;
   color:#111;
 }
+
+
+
+#table_border {
+  border-collapse: collapse;
+  width: 100%;
+  border: none;
+  font-size: 18px;
+}
+
+#table_border th, #table_border td {
+  text-align: left;
+  padding: 12px;
+  border: none;
+}
+
+/*#table_border tr,td, th{
+  border-bottom: 1px red dotted;
+  color:#333;
+}*/
+#table_border th{background-color: #f1f1f1}
+
+
+
+#table_border  tr:hover {
+  background-color: yellow;
+  color:#111;
+}
+
+.b{border: 1px solid #999;}

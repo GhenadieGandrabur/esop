@@ -24,23 +24,11 @@ class Vocabulary
     {
         $words = $this->vocabularyTable->findAll();
 
-         /*$words = [];
-        foreach ($result as $word) {
-            
-
-           $words[] = [
-                'id' => $word['id'],
-                'en' => $word['en'],
-                'definition' => $word['definition'],
-                'ro' => $word['ro'],
-                'ru' => $word['ru'],
-                'category'=>$word['category']              
-            ];
-        }*/
+     
 
 
         $title = 'Vocabulary';
-//$pic = '/img/cambridge.jpg';
+        $pic = '/img/cambridge.jpg';
 
         $totalwords = $this->vocabularyTable->total();
      

@@ -95,6 +95,11 @@ $routes = [
 'category/list' => ['GET' => ['controller' => $categoryController,'action' => 'list'],'login' => true],
 'category/delete' => [ 'POST' => ['controller' => $categoryController, 'action' => 'delete' ],'login' => true],
 
+'sptrans/edit' => [ 'POST' => ['controller' => $sptransController, 'action' => 'saveEdit' ],
+                      'GET' => ['controller' => $sptransController, 'action' => 'edit' ], 'login' => true ],
+'sptrans/list' => ['GET' => ['controller' => $sptransController,'action' => 'list'],'login' => true],
+'sptrans/delete' => [ 'POST' => ['controller' => $sptransController, 'action' => 'delete' ],'login' => true],
+
 ];
 
 return $routes;

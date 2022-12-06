@@ -49,7 +49,7 @@ class EntryPoint
             $page = $controller->$action();
 
             $title = $page['title'];
-          //  $pic = $page['pic'];
+            $pic = $page['pic'];
 
             if (isset($page['variables'])) {
                 $output = $this->loadTemplate($page['template'], $page['variables']);

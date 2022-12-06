@@ -11,14 +11,14 @@
 
 <ol>
 <?php foreach ($events as $event):?>
-<li style="padding:5px ;"><a href="<?='#'. $event['id']?>"><?= $event['topic']?></a></li>
+<li style="padding:5px ;"><a href="<?='#'. $event->id ?>"><?= $event->topic ?></a></li>
 <?php endforeach; ?>
 </ol>
 <?php foreach ($events as $event):?>
 <br>
-<h4 id="<?= $event['id']?>"><b> <?=  $event['topic']?></b></h4>
+<h4 id="<?= $event->id ?>"><b> <?=  $event->topic?></b></h4>
 <p  class="tj">
-<img id="myImg" onclick="myFunc(this)" style="float:left; margin-right:15px; width:100%; max-width:150px "  src="/img/<?=$event['eventimage']?>" alt="<?=$event['image_text']??''?>">
+<img id="myImg" onclick="myFunc(this)" style="float:left; margin-right:15px; width:100%; max-width:150px "  src="/img/<?=$event->eventimage ?>" alt="<?=$event->image_text ??''?>">
     
     <div id="myModal" class="modal">
     <span class="close">&times;</span>
@@ -26,7 +26,7 @@
     <div id="caption"></div>
     </div>
 
-<?= $event['eventtext']?>
+<?= $event->eventtext ?>
 </p>
 <h5><a href="#top" class="button" style="float:right"><i class="fa fa-arrow-up" aria-hidden="true"> UP</i></a></h5> 
 </p>
@@ -35,10 +35,10 @@
 <?php if ($userId>0) : ?>
 <table>
 <tr>
-<td> <a class="button button_edit"  href="/events/edit?id=<?= $event['id'] ?>">Edit</a> </td>
+<td> <a class="button button_edit"  href="/events/edit?id=<?= $event->id ?>">Edit</a> </td>
 <td>
 <form action="/events/delete" method="post">
-<input type="hidden" name="id" value="<?= $event['id'] ?>">
+<input type="hidden" name="id" value="<?= $event->id ?>">
 <input class="button button_delete" type="submit" value="Delete">
 </form>
 </td>
@@ -51,16 +51,6 @@
 </div>
 
 <div class="col-2 col-s-2" >
-<?php if ( $_SERVER['REQUEST_METHOD'] === 'GET') {  
-   echo "GET";
-   echo '<br>';
-   echo ltrim(strtok($_SERVER['REQUEST_URI'], '?'), '/');
-   '<br>';  
-}
-else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
- echo "post";
- echo '<br>';
- echo ltrim(strtok($_SERVER['REQUEST_URI'], '?'), '/');
-}?>
+
 </div>
 </div>

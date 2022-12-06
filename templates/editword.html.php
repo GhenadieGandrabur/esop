@@ -1,29 +1,30 @@
      <div class="row"> 
-        <div class = "col-4 col-s-4"> </div>                                             
-        <div class = "col-4 col-s-4"> 
-            <h3>Words</h3>                                             
-            <form action="" method="post">
-                <input type="hidden" name="word[id]" value="<?= $word['id'] ?? '' ?>">
+        <div class = "col-3 col-s-3"> </div>                                             
+        <div class = "col-6 col-s-6"> 
+            <h1>Words of dictionary</h1>                                             
+            <form action="" method="post" class="formwork"> 
+                <input type="hidden" name="word[id]" value="<?= $word->id  ?? '' ?>">
                 
-                <label for = "en" >English</label><br>
-                <input size="30" type="" id ="en" name="word[en]" value="<?= $word['en'] ?? '' ?>"><br>
+                <label for = "en" >English</label>
+                <input  id ="en" name="word[en]" value="<?= $word->en  ?? '' ?>">
                 
-                <label for="definition">Definition: </label><br>
-                <textarea rows="4" cols="50" id="definition" name="word[definition]"><?= $word['definition'] ?? '' ?></textarea><br>
+                <label for="definition">Definition: </label>
+                <textarea rows="4" cols="100"  id="definition" name="word[definition]"><?= $word->definition  ?? '' ?></textarea>
                 
-                <label for="ro">RO: </label><br>
-                <input size="30" id="ro" name="word[ro]" value ="<?= $word['ro'] ?? '' ?>"><br>
+                <label for="ro">RO: </label>
+                <input  id="ro" name="word[ro]" value ="<?= $word->ro  ?? '' ?>">
                 
-                <label for="ru">RU: </label><br>
-                <input size="30" id="ru" name="word[ru]" value = "<?= $word['ru'] ?? '' ?>"><br>
+                <label for="ru">RU: </label>
+                <input  id="ru" name="word[ru]" value = "<?= $word->ru  ?? '' ?>">
                 
-                <p>Select categories for this word:</p>
-                <?php foreach ($categories as $category): ?>
+                 <label for="category"><b>Words categories:</b></label>
+                <?php foreach ($categories as $category): ?>            
                 <input type="checkbox" name="category[]" value="<?=$category->id?>" /> 
                 <label><?=$category->name?></label>
                 <?php endforeach; ?>     
-                <input  class="button button_edit" type="submit" name="submit" value="Save">
+                <input  type="submit" name="submit" value="Save">
+                
             </form>
         </div>
-            <div class = "col-4 col-s-4"></div>
+            <div class = "col-3 col-s-3"></div>
      </div>

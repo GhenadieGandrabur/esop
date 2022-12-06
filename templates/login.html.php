@@ -1,9 +1,9 @@
-<div class="row">
-        <div class="col-4 col-s-4">
+<div class="row ">
+        <div class="col-3 col-s-3">
         
         </div>
 
-<div class="col-4 col-s-4 tc" >
+<div class="col-6 col-s-6  tc" >
    <h1>Login</h1>
    
 <?php
@@ -14,16 +14,15 @@ endif;
    
 
 
-<form method="post" action="" class='form'>
-<table class='formstyle tr'>
-<tr><td><label for="email">Your email address:</label></td><td><input type="text" id="email" name="email"></td></tr>
-<tr><td><label for="password">Your password:</label></td><td><input type="password" id="password" name="password"></td></tr>
-<tr><td></td><td ><input class="button button_save" type="submit"  name="login"  value="Log in"></td></tr>
-</table>
+<form method="post" action="" class='log'>
+
+  <label for="email">Your email address:</label></td><td><input type="text" id="email" name="email">  
+  <label for="password">Your password:</label></td><td><input type="password" id="password" name="password">  
+  <input  type="submit"  name="login"  value="Log in">  
+
 </form>        
 </div>
-        <div class="col-4 col-s-4">
-                
+        <div class="col-3 col-s-3">                
         </div>
 </div>
 

@@ -48,8 +48,8 @@ class Category
         return ['template' => 'editcategory.html.php',
         'title' => $title,
         'variables' => [
-            'category' => $category ?? null,
-            'categories' => $categories
+            'category' => $category ?? null
+            
         ]
         ];
     }
