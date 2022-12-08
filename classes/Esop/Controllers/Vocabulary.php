@@ -11,18 +11,36 @@ class Vocabulary
     private $vocabularyTable;
     private $categoriesTable;
     private $authentication;
+    private $wordCategories;
 
-    public function __construct(DatabaseTable $vocabularyTable, DatabaseTable $authorsTable,  DatabaseTable $categoriesTable, Authentication $authentication,)
+
+    public function __construct(DatabaseTable $vocabularyTable, DatabaseTable $authorsTable,  DatabaseTable $categoriesTable, Authentication $authentication, DatabaseTable $wordCategories)
     {
         $this->vocabularyTable = $vocabularyTable;
         $this->authorsTable = $authorsTable;
         $this->categoriesTable = $categoriesTable;
         $this->authentication = $authentication;
+        $this->wordCategories = $wordCategories;
     }
 
     public function list()
     {
-        $words = $this->vocabularyTable->findAll();
+        $categories = $this->categoriesTable->findAll();
+        if(!isset($_GET['categoryId'])){
+            $words = $this->vocabularyTable->findAll();
+        }else{
+            $wordCategories = $this->wordCategories->find('categoryId',$_GET['categoryId']);
+            if(empty($wordCategories)){
+                $wordCategories=[];
+            }
+            $words = [];
+            foreach($wordCategories as $wordCategory){
+            $words[] = $this-> vocabularyTable->findById($wordCategory->wordId);
+    
+            }
+        }
+
+    
 
      
 
@@ -43,7 +61,9 @@ class Vocabulary
                 'variables' => [
                     'totalwords' => $totalwords,
                     'words' => $words,
-                    'userId' => $author->id ?? null
+                    'userId' => $author->id ?? null,
+                    'categories'=>$categories,
+
                 ]
             ];
     }

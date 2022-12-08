@@ -14,7 +14,13 @@
     <a class= "button button_edit" href="/word/edit">Add a new word</a>
     <?php endif;?>
     </h4>
-
+    <p><a class= "button button_edit"  href="/word/list">All words</a></p>
+    <p > Select a category: 
+     <?php foreach($categories as $category):?>
+     <a class="button" href="/word/list?categoryId=<?=$category->id?>">   <?=$category->name?></a>     
+     <?php endforeach;?>
+    </p>
+     
       
          <!--<input type="text" id="myInput" onkeyup="findaword()" placeholder="Find a word" title="Insert a word">-->
     <table  id="myTable">
