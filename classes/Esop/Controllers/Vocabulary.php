@@ -11,16 +11,16 @@ class Vocabulary
     private $vocabularyTable;
     private $categoriesTable;
     private $authentication;
-    private $wordCategories;
+    private $wordCategoryTable;
 
 
-    public function __construct(DatabaseTable $vocabularyTable, DatabaseTable $authorsTable,  DatabaseTable $categoriesTable, Authentication $authentication, DatabaseTable $wordCategories)
+    public function __construct(DatabaseTable $vocabularyTable, DatabaseTable $authorsTable,  DatabaseTable $categoriesTable, Authentication $authentication, DatabaseTable $wordCategoryTable)
     {
         $this->vocabularyTable = $vocabularyTable;
         $this->authorsTable = $authorsTable;
         $this->categoriesTable = $categoriesTable;
         $this->authentication = $authentication;
-        $this->wordCategories = $wordCategories;
+        $this->wordCategoryTable = $wordCategoryTable;
     }
 
     public function list()
@@ -29,7 +29,7 @@ class Vocabulary
         if(!isset($_GET['categoryId'])){
             $words = $this->vocabularyTable->findAll();
         }else{
-            $wordCategories = $this->wordCategories->find('categoryId',$_GET['categoryId']);
+            $wordCategories = $this->wordCategoryTable->find('categoryId',$_GET['categoryId']);
             if(empty($wordCategories)){
                 $wordCategories=[];
             }
@@ -83,11 +83,13 @@ class Vocabulary
         if (isset($_GET['id'])) {
             $word = $this->vocabularyTable->findById($_GET['id']);         
         }
-
+        
         $word = $_POST['word'];       
-
+        
         $this->vocabularyTable->save($word);
-
+        foreach($_POST['category'] as $category){
+          $this->wordCategoryTable->save(['wordId'=>$word['id'],'categoryId'=>$category]);      
+        }
         header('location: /word/list');
     }
 
@@ -101,6 +103,15 @@ class Vocabulary
         }
 
         $title = 'Edit word';
+         $wordCategories = $this->wordCategoryTable->find('wordId',$_GET['id']);
+        if(empty($wordCategories)){
+            $wordCategories=[];
+        }
+        $categoriesId = [];
+        foreach($wordCategories as $wordCategory){
+            $categoriesId[] = $wordCategory->categoryId;
+
+        }
 
         return [
             'template' => 'editword.html.php',
@@ -108,7 +119,8 @@ class Vocabulary
             'variables' => [
                 'word' => $word ?? null,
                 'userId' => $author->id ?? null,
-                'categories' => $categories
+                'categories' => $categories,
+                'categoriesId' => $categoriesId
             ]
         ];
     }   

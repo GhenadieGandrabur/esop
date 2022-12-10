@@ -1,7 +1,8 @@
      <div class="row"> 
         <div class = "col-3 col-s-3"> </div>                                             
         <div class = "col-6 col-s-6"> 
-            <h1>Words of dictionary</h1>                                             
+            <h1>Words of dictionary</h1>
+            <?php print_r($categoriesId)?>                                             
             <form action="" method="post" class="formwork"> 
                 <input type="hidden" name="word[id]" value="<?= $word->id  ?? '' ?>">
                 
@@ -19,7 +20,7 @@
                 
                  <label for="category"><b>Words categories:</b></label>
                 <?php foreach ($categories as $category): ?>            
-                <input type="checkbox" name="category[]" value="<?=$category->id?>" /> 
+                <input type="checkbox" name="category[]" value="<?=$category->id?>" <?= in_array($category->id.'',$categoriesId)?'checked selected':''?>/> 
                 <label><?=$category->name?></label>
                 <?php endforeach; ?>     
                 <input  type="submit" name="submit" value="Save">
