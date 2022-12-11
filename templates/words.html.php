@@ -20,7 +20,7 @@
      <a class="button" href="/word/list?categoryId=<?=$category->id?>">   <?=$category->name?></a>     
      <?php endforeach;?>
     </p>     
-         <!--<input type="text" id="myInput" onkeyup="findaword()" placeholder="Find a word" title="Insert a word">-->
+         <input type="text" id="myInput" onkeyup="findaword()" placeholder="Find a word" title="Insert a word">
     <table  id="myTable">
     <tr class="theader">
     <th>English</th>
@@ -63,22 +63,29 @@
     
     <script>
     function findaword() {
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-    txtValue = td.textContent || td.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-    tr[i].style.display = "";
-    } else {
-    tr[i].style.display = "none";
-    }
-    }       
-    }
+      var input, filter, table, tr, td, tds, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        let iscontaine = false;
+//td = tr[i].getElementsByTagName("td")[0];
+        tds = tr[i].getElementsByTagName("td");   
+        Array.from(tds).forEach(td => {
+          if (!iscontaine) {
+            txtValue = td.textContent || td.innerText;
+            console.log(txtValue,txtValue.toUpperCase().indexOf(filter),i);
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+             tr[i].style.display = "";
+             iscontaine = true;
+            } else {
+             tr[i].style.display = "none";
+            }
+          }   
+        });   
+        
+      }
     }
 
 
