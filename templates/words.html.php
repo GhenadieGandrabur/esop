@@ -6,22 +6,32 @@
             <p class="tr"><small>John Dewey</small></p>
         </div>
 
-    <div class="col-10 col-s-10" style="padding:50px ;">
-    <h4 style="color:red ;">Vocabulary. <p style="color:black;  display:inline; "><?= $totalwords?> words in vocabulary.</p></h4>
-    
-    <h4>
-      <?php if ($userId>0) : ?>
-    <p><a class= "button button_edit" href="/word/edit">Add a new word</a>
-    </p>
+    <div class="col-10 col-s-10" >
+      <div style="display:flex; width:100%;">
+        <div style="width: 70%;"><h1>Vocabulary</h1></div>
+        <div >
+        <p style="color:#666;" >There are <?= $totalwords?> words in vocabulary.</p>
+        </div>
+     </div>  
+      
+    <p>
+    <?php if ($userId>0) : ?>
+    <a class= "button button_edit" href="/word/edit">Add a new word</a>   
     <?php endif;?>
-    </h4>
-    <p><a class= "button button_edit"  href="/word/list">All words</a></p>
-    <p ><a class= "button button_edit"  href="/category/list">Categories</a> Select a category: 
+    </p>
+    
+    <p >
+     <?php if ($userId>0) : ?> 
+      <a class= "button button_edit"  href="/word/list">All words</a> <a class= "button button_edit"  href="/category/list">Manage categories</a>
+      <?php endif;?>
+      
+      Filter by a category: 
      <?php foreach($categories as $category):?>
      <a class="button" href="/word/list?categoryId=<?=$category->id?>">   <?=$category->name?></a>     
      <?php endforeach;?>
+      <input type="text" id="myInput" onkeyup="findaword()" placeholder="Find a word" title="Insert a word">
     </p>     
-         <input type="text" id="myInput" onkeyup="findaword()" placeholder="Find a word" title="Insert a word">
+        
     <table  id="myTable">
     <tr class="theader">
     <th>English</th>
