@@ -4,33 +4,33 @@
 </div>
 <div class="col-8 col-s-8">
 <h3>Edit event:</h3>                                    
-<form action="" method="post"  class="eventform">           
-<input id="id" name="event[id]" value="<?=$event['id']?? null?>" type="hidden"> <br>       
-<label for = "topic" >Topic of the event:</label><br>
-<input   type="text" id ="topic" name="event[topic]" value="<?= $event['topic'] ?? '' ?>"><br><hr><br>
+<form action="" method="post"  class="editform">           
+<input id="id" name="event[id]" value="<?=$event->id ?? null?>" type="hidden">         
+<label for = "topic" >Topic of the event:</label> 
+<input   type="text" id ="topic" name="event[topic]" value="<?= $event->topic  ?? '' ?>"> <hr> 
 <div class="row">
 <div class = "col-4 col-s-4 tc">            
     <p>Current image</p>
-<img  id="event_src" src="/img/<?= $event['eventimage'] ?? 'no image.jpg' ?>" width="100" height="auto"><br>
+<img  id="event_src" src="/img/<?= $event->eventimage  ?? 'no image.jpg' ?>" width="100" height="auto"> 
 </div>
 <div class = "col-4 col-s-4 tc"> 
 
 <a class = "button button_edit" href="/filemanager" onclick="handleClick(event)">Select an image to change the old one.</a>          
-<input  type="hidden"  id="eventsrc" name="event[eventimage]" value="<?=$event['eventimage']?? ''?>"> <br>
+<input  type="hidden"  id="eventsrc" name="event[eventimage]" value="<?=$event->eventimage ?? ''?>">  
 </div>
 <div class = "col-4 col-s-4 tc"> 
     <p>Selected image.</p>
-<img id = "srcsmall" src="/img/no image.jpg" width="100" height="auto"><br>
+<img id = "srcsmall" src="/img/no image.jpg" width="100" height="auto"> 
 <p style="font-size:10px;"> To save it press Save button below.</p>
 </div>
 </div>
-<hr><br>
+<hr> 
 
 
 
 
-<label for="textarea">Type your event here: </label><br>
-<textarea id="textarea" name="event[eventText]" rows="30" cols="100%" ><?= $event['eventtext'] ?? '' ?></textarea><br>
+<p>Type your event here: </p> 
+<textarea id="textarea" name="event[eventText]" rows="30" cols="100%" ><?= $event->eventtext  ?? '' ?></textarea> 
 <input class='button button_save' type="submit" name="submit" value="Save">    
 </form>
 </div>        

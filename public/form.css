@@ -18,3 +18,9 @@
 .log input[type="submit"] {margin-left: 15em; width: auto; padding: 0.5em 1em; clear: both; font-size: 1em;}
 .log input,  select, textarea {float: left; width: 15em; margin-bottom: 1em;  padding: 0.5em;}
 .log form {overflow: auto; clear: both; display: block;}
+
+.editform  input, select { width: 15em; margin-bottom: 1em; padding: 0.5em; }
+.editform label{float: left; width: 15em; margin-bottom: 1em;  padding: 0.5em; clear:right;}
+.editform  textarea{ margin-bottom: 2em; }
+.editform input[type="submit"] { width: auto; padding: 0.5em 1em; clear: both; font-size: 1em; margin-top: 1em;}
+.editform {overflow: auto; clear: both; display: block;}

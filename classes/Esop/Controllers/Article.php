@@ -113,7 +113,7 @@ class Article
             'title' => $title,
             'variables' => [
                 'article' => $article ?? null,
-                'userId' => $author['id'] ?? null
+                'userId' => $author->id ?? null
             ]
         ];
     }   
