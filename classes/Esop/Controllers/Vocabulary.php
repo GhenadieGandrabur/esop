@@ -24,7 +24,7 @@ class Vocabulary
     }
 
     public function list()
-    {
+    {            
         $categories = $this->categoriesTable->findAll();
         if(!isset($_GET['categoryId'])){
             $words = $this->vocabularyTable->findAll();
@@ -35,21 +35,13 @@ class Vocabulary
             }
             $words = [];
             foreach($wordCategories as $wordCategory){
-            $words[] = $this-> vocabularyTable->findById($wordCategory->wordId);
-    
+            $words[] = $this-> vocabularyTable->findById($wordCategory->wordId);    
             }
         }
-
-    
-
-     
-
-
         $title = 'Vocabulary';
         $pic = '/img/cambridge.jpg';
 
-        $totalwords = $this->vocabularyTable->total();
-     
+        $totalwords = $this->vocabularyTable->total();     
 
         $author = $this->authentication->getUser();
 
@@ -63,7 +55,6 @@ class Vocabulary
                     'words' => $words,
                     'userId' => $author->id ?? null,
                     'categories'=>$categories,
-
                 ]
             ];
     }
@@ -78,16 +69,18 @@ class Vocabulary
     }
     public function saveEdit()
     {
-        
-
-        if (isset($_GET['id'])) {
+       /* if (isset($_GET['id'])) {
             $word = $this->vocabularyTable->findById($_GET['id']);         
-        }
+        }*/
         
-        $word = $_POST['word'];       
+        $word = $_POST['word'];
+        $this->wordCategoryTable->deleteWhere('wordId', $word['id']);
+        
         
         $this->vocabularyTable->save($word);
+        
         foreach($_POST['category'] as $category){
+
           $this->wordCategoryTable->save(['wordId'=>$word['id'],'categoryId'=>$category]);      
         }
         header('location: /word/list');

@@ -1,8 +1,7 @@
      <div class="row"> 
         <div class = "col-3 col-s-3"> </div>                                             
         <div class = "col-6 col-s-6"> 
-            <h1>Words of dictionary</h1>
-            <?php print_r($categoriesId)?>                                             
+            <h1>Words of dictionary</h1>            
             <form action="" method="post" class="formwork"> 
                 <input type="hidden" name="word[id]" value="<?= $word->id  ?? '' ?>">
                 

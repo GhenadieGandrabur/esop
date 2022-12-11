@@ -19,9 +19,7 @@
      <?php foreach($categories as $category):?>
      <a class="button" href="/word/list?categoryId=<?=$category->id?>">   <?=$category->name?></a>     
      <?php endforeach;?>
-    </p>
-     
-      
+    </p>     
          <!--<input type="text" id="myInput" onkeyup="findaword()" placeholder="Find a word" title="Insert a word">-->
     <table  id="myTable">
     <tr class="theader">

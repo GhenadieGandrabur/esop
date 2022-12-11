@@ -13,13 +13,12 @@ private $certificatesTable;
 private $wordTable;
 private $sptransTable;
 private $categoriesTable;
-
+private $wordCategoriesTable;
 
 
 public function __construct()
 {
 include __DIR__ . '/../../includes/DatabaseConnection.php';
-
 
 $this->articlesTable = new \Main\DatabaseTable($pdo, 'article', 'id');
 $this->sptransTable = new \Main\DatabaseTable($pdo, 'sptrans', 'id');
