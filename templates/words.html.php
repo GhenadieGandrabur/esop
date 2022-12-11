@@ -12,19 +12,13 @@
         <div >
         <p style="color:#666;" >There are <?= $totalwords?> words in vocabulary.</p>
         </div>
-     </div>  
-      
-    <p>
-    <?php if ($userId>0) : ?>
-    <a class= "button button_edit" href="/word/edit">Add a new word</a>   
-    <?php endif;?>
-    </p>
-    
-    <p >
-     <?php if ($userId>0) : ?> 
-      <a class= "button button_edit"  href="/word/list">All words</a> <a class= "button button_edit"  href="/category/list">Manage categories</a>
-      <?php endif;?>
-      
+     </div>       
+     <p>
+       <a class= "button button_edit"  href="/word/list">All words</a>          
+       <?php if ($userId>0) : ?>
+        <a class= "button button_edit"  href="/category/list">Manage categories</a>
+        <a class= "button button_edit" href="/word/edit">Add a new word</a>   
+        <?php endif;?>
       Filter by a category: 
      <?php foreach($categories as $category):?>
      <a class="button" href="/word/list?categoryId=<?=$category->id?>">   <?=$category->name?></a>     
