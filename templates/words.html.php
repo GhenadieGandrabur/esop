@@ -11,11 +11,12 @@
     
     <h4>
       <?php if ($userId>0) : ?>
-    <a class= "button button_edit" href="/word/edit">Add a new word</a>
+    <p><a class= "button button_edit" href="/word/edit">Add a new word</a>
+    </p>
     <?php endif;?>
     </h4>
     <p><a class= "button button_edit"  href="/word/list">All words</a></p>
-    <p > Select a category: 
+    <p ><a class= "button button_edit"  href="/category/list">Categories</a> Select a category: 
      <?php foreach($categories as $category):?>
      <a class="button" href="/word/list?categoryId=<?=$category->id?>">   <?=$category->name?></a>     
      <?php endforeach;?>
@@ -28,7 +29,7 @@
     <th>Romanian</th>
     <th>Russian</th>
     <?php if($userId > 0):?>
-    <th>Category</th>
+    
     <th>Edit</th>
     <th>Delete</th>
     </tr>
@@ -42,7 +43,7 @@
     <td><?= htmlspecialchars($word->ru, ENT_QUOTES, 'UTF-8') ?></td>
     
     <?php if($userId > 0):?>             
-    <td><?= htmlspecialchars($word->category, ENT_QUOTES, 'UTF-8') ?></td>    
+       
     <td>                 
       <a class= "button button_edit" href="/word/edit?id=<?= $word->id ?>">Edit</a>
     </td>
