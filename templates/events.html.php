@@ -16,20 +16,23 @@
 </ol>
 <?php foreach ($events as $event):?>
 <br>
-<h4 id="<?= $event->id ?>"><b> <?=  $event->topic?></b></h4>
-<p  class="tj">
-<img id="myImg" onclick="myFunc(this)" style="float:left; margin-right:15px; width:100%; max-width:150px "  src="/img/<?=$event->eventimage ?>" alt="<?=$event->image_text ??''?>">
+<h1 id="<?= $event->id ?>"><b> <?=  $event->topic?></b></h1>
+<div class="row">
+<div class="col-3 col-s-3 ">
+<p><img id="myImg" onclick="myFunc(this)" style="float:left; margin-right:15px; width:100%; max-width:150px "  src="/img/<?=$event->eventimage ?>" alt="<?=$event->image_text ??''?>"></p>
     
     <div id="myModal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="img01">
     <div id="caption"></div>
     </div>
+</div>
 
-<?= $event->eventtext ?>
-</p>
+<div class="col-9 col-s-9 ">
+<span  class="tj"><?= $event->eventtext ?></span>
+</div>
+
 <h5><a href="#top" class="button" style="float:right"><i class="fa fa-arrow-up" aria-hidden="true"> UP</i></a></h5> 
-</p>
 <hr>
 
 <?php if ($userId>0) : ?>
