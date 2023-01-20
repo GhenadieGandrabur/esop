@@ -32,6 +32,7 @@
 </form>           
 </div> 
 <div class="col-4 col-s-4">
+    
  
 <div style="text-align:center;"><h4>You selected this pic</h4><img id = "srcsmall" src="/img/no image.jpg" width="100" height="auto">
 </div>            
