@@ -1,9 +1,17 @@
     <div class="row">
 
         <div class="col-2 col-s-2 pd1">
-            <img class = "img" src="/img/duck_teacher.jpg">
-            <h4 class="tj">If we teach today's students as we taught yesterday's, we rob them of tomorrow.</h4>
-            <p class="tr"><small>John Dewey</small></p>
+          <!--<img class = "img" src="/img/duck_teacher.jpg" style="width:100px ;">
+          <p class="tj">If we teach today's students as we taught yesterday's, we rob them of tomorrow.</p>
+          <p class="tr"><small>John Dewey</small></p>-->
+          <br>
+          <h3>Word categories</h3>
+           <ul class="categories" style="float:left;">
+          <li><b><a href="/word/list" >All categories</a></b></li>
+          <?php foreach($categories as $category): ?>
+          <li><a href="/word/list?category=<?=$category->id?>"><?=$category->name?></a><li>
+          <?php endforeach; ?>
+        </ul>
         </div>
 
     <div class="col-10 col-s-10" >
@@ -14,17 +22,13 @@
         </div>
      </div>       
      <p>
-       <a class= "button button_edit"  href="/word/list">All words</a>          
+                 
        <?php if ($userId>0) : ?>
         <a class= "button button_edit"  href="/category/list">Manage categories</a>
         <a class= "button button_edit" href="/word/edit">Add a new word</a>   
         <?php endif;?>
-      Filter by a category: 
-     <?php foreach($categories as $category):?>
-     <a class="button" href="/word/list?categoryId=<?=$category->id?>">   <?=$category->name?></a>     
-     <?php endforeach;?>
-      <input type="text" id="myInput" onkeyup="findaword()" placeholder="Find a word" title="Insert a word">
-    </p>     
+        <input srtyle="float:right;" type="text" id="myInput" onkeyup="findaword()" placeholder="Find a word" title="Insert a word">
+       
         
     <table  id="myTable">
     <tr class="theader">
@@ -41,10 +45,10 @@
 
     <?php foreach ($words as $word) : ?>        
     <tr>
-    <td><?= htmlspecialchars($word->en, ENT_QUOTES, 'UTF-8') ?></td>
-    <td><?= htmlspecialchars($word->definition, ENT_QUOTES, 'UTF-8') ?></td>
-    <td><?= htmlspecialchars($word->ro, ENT_QUOTES, 'UTF-8') ?></td>
-    <td><?= htmlspecialchars($word->ru, ENT_QUOTES, 'UTF-8') ?></td>
+    <td><?= htmlspecialchars($word->en, ENT_QUOTES, 'UTF-8')??"" ?></td>
+    <td><?= htmlspecialchars($word->definition, ENT_QUOTES, 'UTF-8')??"" ?></td>
+    <td><?= htmlspecialchars($word->ro, ENT_QUOTES, 'UTF-8')??"" ?></td>
+    <td><?= htmlspecialchars($word->ru, ENT_QUOTES, 'UTF-8')??"" ?></td>
     
     <?php if($userId > 0):?>             
        

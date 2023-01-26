@@ -8,7 +8,7 @@ private $authorsTable;
 private $articlesTable;
 private $authentication;
 private $eventsTable;
-private $examssTable;
+private $examsTable;
 private $certificatesTable;
 private $wordTable;
 private $sptransTable;
@@ -29,8 +29,7 @@ $this->examsTable = new \Main\DatabaseTable($pdo, 'exams', 'id');
 $this->authorsTable = new \Main\DatabaseTable($pdo, 'author', 'id');
 $this->authentication = new \Main\Authentication($this->authorsTable, 'email', 'password');
 $this->categoriesTable = new \Main\DatabaseTable($pdo, 'category', 'id');
-$this->wordCategoriesTable = new \Main\DatabaseTable($pdo, 'word_category', 'categoryId');
-
+$this->wordCategoriesTable = new \Main\DatabaseTable($pdo, 'word_category', 'categoryId', '\Esop\Entity\Category', [&$this->wordTable, &$this->wordCategoriesTable]);
 }
 
 public function getRoutes(): array

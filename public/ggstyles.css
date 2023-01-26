@@ -1,16 +1,47 @@
-.bl {background-color: #000000; color: #ffffff;}
+.bl {
+  background-color: #000000;
+  color: #ffffff;
+}
 
-.pd1 {padding: 10px;}
-.pd2 {padding: 20px;}
-.pd05 {padding: 5px;}
+.pd1 {
+  padding: 10px;
+}
 
-.b{border: 1px #999999 solid;}
-.textac{text-align: center;}
-.tj{text-align: justify;}
-.tr{text-align: right;}
-.tl{text-align:left;}
-.tc{text-align: center;}
-.mb2{margin-bottom: 20px;}
+.pd2 {
+  padding: 20px;
+}
+
+.pd05 {
+  padding: 5px;
+}
+
+.b {
+  border: 1px #999999 solid;
+}
+
+.textac {
+  text-align: center;
+}
+
+.tj {
+  text-align: justify;
+}
+
+.tr {
+  text-align: right;
+}
+
+.tl {
+  text-align: left;
+}
+
+.tc {
+  text-align: center;
+}
+
+.mb2 {
+  margin-bottom: 20px;
+}
 
 #myInput {
   background-image: url('/../img/search.png');
@@ -22,7 +53,8 @@
   border: 1px solid #ddd;
   margin-bottom: 12px;
 }
-#topicInput {  
+
+#topicInput {
   background-position: 10px 10px;
   background-repeat: no-repeat;
   width: 100%;
@@ -39,23 +71,26 @@
   font-size: 18px;
 }
 
-#myTable th, #myTable td {
-  text-align: left;
-  padding: 12px;
-  vertical-align: top;
+
+#myTable tr,
+td,
+th {
+  border: 1px solid #666;
+  color: #111;
+  font-size: 12px;
+  padding: 1px 11px;
 }
 
-#myTable tr,td, th{
-  border: 1px solid #ccc;
-  color:#333;
+#myTable th {
+  background-color: #f1f1f1
 }
-#myTable th{background-color: #f1f1f1}
 
 
 
-#myTable  tr:hover {
-  background-color: #f1f1f1;
-  color:#111;
+#myTable tr:hover {
+  background-color: yellowgreen;
+  color: #111;
+
 }
 
 
@@ -67,7 +102,8 @@
   font-size: 18px;
 }
 
-#table_border th, #table_border td {
+#table_border th,
+#table_border td {
   text-align: left;
   padding: 12px;
   border: none;
@@ -77,13 +113,17 @@
   border-bottom: 1px red dotted;
   color:#333;
 }*/
-#table_border th{background-color: #f1f1f1}
-
-
-
-#table_border  tr:hover {
-  background-color: yellow;
-  color:#111;
+#table_border th {
+  background-color: #f1f1f1
 }
 
-.b{border: 1px solid #999;}
+
+
+#table_border tr:hover {
+  background-color: yellow;
+  color: #111;
+}
+
+.b {
+  border: 1px solid #999;
+}
