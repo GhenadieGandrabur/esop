@@ -24,7 +24,7 @@ $dir_name =  "img/";
 $images = glob($dir_name."*");
 ?>
 
-<div class="row b">
+<div class="row ">
 <div class="col-2 col-s-2">
 
 </div>
@@ -37,21 +37,22 @@ $images = glob($dir_name."*");
 <input name="fileload" type="file" id="fileElem" multiple accept="image/*" style="display:none" onchange="handleFiles(this.files)">
 <label style ="border:1px solid; padding:5px;" for="fileElem">Load an image</label>
 </form>  
-<hr>     
-<div class="tc">         
-    <?php foreach($images as $image):?>     
-    <div id="cros"  style="width:75px; height:auto;  float:left;  margin:5px; position: relative;" class="b">                           
-                          
-    <img  style="width:100%; max-height: 160px;"  src='<?=$image?>' onclick="pickTheImage(this.src)" > 
-    
-  
-  <form action="" method="POST">
+   <br>
+ 
+    <?php $n = 0 ?>   
+    <?php foreach($images as $image):?>  
+      <?php $n = $n+1 ?>  
+        <div style="width:100px; height:100px; display:inline-block; border:1px black solid; overflow:hidden; position:relative; padding:5px" class="tc"> 
+      <div style="position: absolute; top:5px; left:5px; font-size:6px; "><?=$n?></div>                      
+     <div id="pic"> <img   style="width: 50px;"  src='<?=$image?>' onclick="pickTheImage(this.src)" > </div>                      
+                       
+        <div style="position: absolute; bottom:3px; right:3px;"><form action="" method="POST">
     <input type="hidden" name="picForDelete" value="<?=$image?>">
-    <input type="submit" value="❌">
-  </form> 
-    </div>                
-    <?php endforeach;?>   
-</div>
+    <input type="submit" value="❌" style="width:5px; font-size:6px; margin:auto">
+  </form> </div> 
+        </div>            
+    <?php endforeach;?> 
+   
 </div>
 
 <div class="col-2 col-s-2">    
@@ -59,19 +60,8 @@ $images = glob($dir_name."*");
 
 
 </div>
-<form action="" method="POST">
-  <input name="test" >
-  <input type="submit" value="najati">
-</form>
 
-<?php
-echo "Test";
-var_dump($_POST);
-foreach($_POST as $key=>$pp){
-  echo $key .'---' .$pp .'<br>';
-}
 
-?>
 </div>
 
 <script>
@@ -81,5 +71,12 @@ function pickTheImage(src) {
     window.opener.postMessage(src,"*");
     window.close();
   }
- 
+
+  const test = document.getElementById("pic");
+  test.addEventListener("mouseover", (event) => {
+  // highlight the mouseenter target
+
+  event.target.style.display = "none"}
+  
+  )
 </script>
