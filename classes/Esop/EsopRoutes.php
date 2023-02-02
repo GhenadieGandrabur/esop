@@ -36,7 +36,7 @@ public function getRoutes(): array
 {
 $articleController = new \Esop\Controllers\Article($this->articlesTable, $this->authorsTable, $this->authentication);
 $sptransController = new \Esop\Controllers\Sptrans($this->sptransTable, $this->authentication);
-$wordController = new \Esop\Controllers\Vocabulary($this->wordTable, $this->authorsTable, $this->categoriesTable, $this->authentication, $this->wordCategoriesTable);
+$wordController = new \Esop\Controllers\Words($this->wordTable, $this->authorsTable, $this->categoriesTable, $this->authentication, $this->wordCategoriesTable);
 $certificatesController = new \Esop\Controllers\Certificates($this->certificatesTable,$this->authentication);
 $eventsController = new \Esop\Controllers\Events($this->eventsTable, $this->authentication);		
 $examsController = new \Esop\Controllers\Exams($this->examsTable, $this->authentication);		

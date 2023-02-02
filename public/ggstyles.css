@@ -104,8 +104,7 @@ th {
 
 #table_border th,
 #table_border td {
-  text-align: left;
-  padding: 12px;
+  text-align: left;  
   border: none;
 }
 
