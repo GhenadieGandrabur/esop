@@ -15,14 +15,14 @@ class Category
         $this->wordCategoriesTable = $wordCategoriesTable;
     }
 
-    public function getJokes()
+    public function getWords()
     {
-        $jokeCategories = $this->wordCategoriesTable->
+        $wordCategories = $this->wordCategoriesTable->
             find('categoryId', $this->id);
 
         $jokes = [];
 
-        foreach ($jokeCategories as $wordCategory) {
+        foreach ($wordCategories as $wordCategory) {
             $word = $this->wordsTable->
                 findById($wordCategory->wordId);
             if ($word) {

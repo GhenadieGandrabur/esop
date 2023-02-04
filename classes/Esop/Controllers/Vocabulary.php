@@ -30,6 +30,7 @@ class Vocabulary
             $words = $this->vocabularyTable->findAll();
         }else{
             $wordCategories = $this->wordCategoryTable->find('categoryId',$_GET['categoryId']);
+           
             if(empty($wordCategories)){
                 $wordCategories=[];
             }
@@ -59,8 +60,6 @@ class Vocabulary
             ];
     }
 
-
-
     public function delete()
     {
         $this->vocabularyTable->delete($_POST['id']);
@@ -69,9 +68,9 @@ class Vocabulary
     }
     public function saveEdit()
     {
-       /* if (isset($_GET['id'])) {
+       if (isset($_GET['id'])) {
             $word = $this->vocabularyTable->findById($_GET['id']);         
-        }*/
+        }
         
         $word = $_POST['word'];
         $this->wordCategoryTable->deleteWhere('wordId', $word['id']);
@@ -88,11 +87,12 @@ class Vocabulary
 
     public function edit()
     {
-        $author = $this->authentication->getUser();
+        
         $categories = $this->categoriesTable->findAll();
 
         if (isset($_GET['id'])) {
             $word = $this->vocabularyTable->findById($_GET['id']);
+        
         }
 
         $title = 'Edit word';
