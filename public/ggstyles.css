@@ -44,12 +44,12 @@
 }
 
 #myInput {
-  background-image: url('/../img/search.png');
+  
   background-position: 10px 10px;
   background-repeat: no-repeat;
   width: 25%;
   font-size: 16px;
-  padding: 12px 20px 12px 40px;
+  padding: 6px 10px 6px 20px;
   border: 1px solid #ddd;
   margin-bottom: 12px;
 }
@@ -104,8 +104,7 @@ th {
 
 #table_border th,
 #table_border td {
-  text-align: left;
-  padding: 12px;
+  text-align: left;  
   border: none;
 }
 

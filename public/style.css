@@ -112,7 +112,7 @@ html {
      
 select { padding: 5px; background-color: #f1f1f1;}
 
-
+li{font-size: 18px;}
 
 .wordtable td,th{border: 1px #ccc solid;}
 .wordtable{border-collapse: collapse; width: 100%;}

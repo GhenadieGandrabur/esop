@@ -9,7 +9,7 @@ function myFunction() {
 
 
   var modal = document.getElementById("myModal");
- // var img = document.getElementById("myImg");
+   var img = document.getElementById("myImg");
   var modalImg = document.getElementById("img01");
   var captionText = document.getElementById("caption");
   function myFunc(el) {
@@ -20,9 +20,11 @@ function myFunction() {
   captionText.innerHTML = altText;
                   }
   var span = document.getElementsByClassName("close")[0];
-  span.onclick = function () {
-    modal.style.display = "none";
-                  }
+  if(span){
+    span.onclick = function () {
+      modal.style.display = "none";
+    }    
+  }
 
 
 

@@ -63,7 +63,9 @@
           
     
   <script>
-    CKEDITOR.replace( 'textarea' );
+   if(document.getElementById('textarea')){
+     CKEDITOR.replace( 'textarea' );
+   } 
   </script>
     
     <?php include 'footer.html.php'?>

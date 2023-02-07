@@ -5,7 +5,8 @@ class Category
 {
     private $categoriesTable;
 
-    public function __construct(\Main\DatabaseTable $categoriesTable)
+    public function __construct(\Main\DatabaseTable
+     $categoriesTable)
     {
         $this->categoriesTable = $categoriesTable;
     }
@@ -13,7 +14,7 @@ class Category
     public function list() {
         $categories = $this->categoriesTable->findAll();
     
-        $title = 'Word Categories';
+        $title = 'Joke Categories';
     
         return ['template' => 'categories.html.php',
         'title' => $title,

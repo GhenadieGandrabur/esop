@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-2 col-s-2 pd1">
 <img class="img" src="/img/duck_teacher.jpg">
-<h4 class="tj">If we teach today's students as we taught yesterday's, we rob them of tomorrow.</h4>
+<h4 class="tj">If we teach today’s students as we taught yesterday’s, we rob them of tomorrow.</h4>
 <p class="tr"><small>John Dewey</small></p>
     </div>
 

@@ -8,17 +8,18 @@ private $authorsTable;
 private $articlesTable;
 private $authentication;
 private $eventsTable;
-private $examsTable;
+private $examssTable;
 private $certificatesTable;
 private $wordTable;
 private $sptransTable;
 private $categoriesTable;
-private $wordCategoriesTable;
+
 
 
 public function __construct()
 {
 include __DIR__ . '/../../includes/DatabaseConnection.php';
+
 
 $this->articlesTable = new \Main\DatabaseTable($pdo, 'article', 'id');
 $this->sptransTable = new \Main\DatabaseTable($pdo, 'sptrans', 'id');
@@ -29,7 +30,8 @@ $this->examsTable = new \Main\DatabaseTable($pdo, 'exams', 'id');
 $this->authorsTable = new \Main\DatabaseTable($pdo, 'author', 'id');
 $this->authentication = new \Main\Authentication($this->authorsTable, 'email', 'password');
 $this->categoriesTable = new \Main\DatabaseTable($pdo, 'category', 'id');
-$this->wordCategoriesTable = new \Main\DatabaseTable($pdo, 'word_category', 'categoryId', '\Esop\Entity\Category', [&$this->wordTable, &$this->wordCategoriesTable]);
+$this->wordCategoriesTable = new \Main\DatabaseTable($pdo, 'word_category', 'categoryId');
+
 }
 
 public function getRoutes(): array

@@ -40,7 +40,7 @@ class Login
 
     public function error()
     {
-        return ['template' => 'loginerror.html.php', 'title' => 'You are not logged in'];
+        return ['template' => 'login.html.php', 'title' => 'You are not logged in'];
     }
     public function logout()
     {
